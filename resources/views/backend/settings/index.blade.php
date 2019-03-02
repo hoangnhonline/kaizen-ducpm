@@ -52,25 +52,21 @@
                 </div>
                 
                 <div class="form-group">
-                  <label>Facebook</label>
+                  <label>Facebook Fanpage</label>
                   <input type="text" class="form-control" name="facebook_fanpage" id="facebook_fanpage" value="{{ $settingArr['facebook_fanpage'] }}">
                 </div>
                 <div class="form-group">
-                  <label>Facebook APP ID</label>
-                  <input type="text" class="form-control" name="facebook_appid" id="facebook_appid" value="{{ $settingArr['facebook_appid'] }}">
+                  <label>Instagram</label>
+                  <input type="text" class="form-control" name="instagram" id="instagram" value="{{ $settingArr['instagram'] }}">
                 </div>
                 <div class="form-group">
-                  <label>Google +</label>
-                  <input type="text" class="form-control" name="google_fanpage" id="google_fanpage" value="{{ $settingArr['google_fanpage'] }}">
+                  <label>Email</label>
+                  <input type="text" class="form-control" name="email" id="email" value="{{ $settingArr['email'] }}">
                 </div>
                 <div class="form-group">
-                  <label>Twitter</label>
-                  <input type="text" class="form-control" name="twitter_fanpage" id="twitter_fanpage" value="{{ $settingArr['twitter_fanpage'] }}">
-                </div>
-                <div class="form-group">
-                  <label>Email CC</label>
-                  <textarea class="form-control" rows="3" name="email_cc" id="email_cc">{{ $settingArr['email_cc'] }}</textarea>
-                </div>
+                  <label>Điện thoại</label>
+                  <input type="text" class="form-control" name="phone" id="phone" value="{{ $settingArr['phone'] }}">
+                </div>                
                 <div class="form-group">
                   <label>Code google analystic </label>
                   <input type="text" class="form-control" name="google_analystic" id="google_analystic" value="{{ $settingArr['google_analystic'] }}">
@@ -82,22 +78,11 @@
                     
                     <input type="file" id="file-logo" style="display:none" />
                  
-                    <button class="btn btn-default" id="btnUploadLogo" type="button"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Upload</button>
+                    <button class="btn btn-default btnSingleUpload" data-image="thumbnail_logo" data-set="logo" type="button"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Upload</button>
+                    <input type="hidden" name="logo" id="logo" value="{{ $settingArr['logo'] }}"/>
                   </div>
                   <div style="clear:both"></div>
-                </div>
-                <div style="clear:both"></div> 
-                <div class="form-group" style="margin-top:10px;margin-bottom:10px">  
-                  <label class="col-md-3 row">Favicon </label>    
-                  <div class="col-md-9">
-                    <img id="thumbnail_favicon" src="{{ $settingArr['favicon'] ? Helper::showImage($settingArr['favicon']) : URL::asset('admin/dist/img/img.png') }}" class="img-favicon" width="50">
-                    
-                    <input type="file" id="file-favicon" style="display:none" />
-                 
-                    <button class="btn btn-default" id="btnUploadFavicon" type="button"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Upload</button>
-                  </div>
-                  <div style="clear:both"></div>
-                </div>
+                </div>                
                 <div style="clear:both"></div> 
                 <div class="form-group" style="margin-top:10px;margin-bottom:10px">  
                   <label class="col-md-3 row">Banner ( og:image ) </label>    
@@ -106,7 +91,8 @@
                     
                     <input type="file" id="file-banner" style="display:none" />
                  
-                    <button class="btn btn-default" id="btnUploadBanner" type="button"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Upload</button>
+                    <button class="btn btn-default btnSingleUpload" data-set="banner_url" data-image="thumbnail_banner"  type="button"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Upload</button>
+                    <input type="hidden" name="banner" id="banner" value="{{ $settingArr['banner'] }}"/>
                   </div>
                   <div style="clear:both"></div>
                 </div>
@@ -151,14 +137,7 @@
                             <textarea class="form-control" rows="6" name="site_description_vi" id="site_description_vi">{{ $settingArr['site_description_vi'] }}</textarea>
                           </div>  
 
-                          <div class="form-group">
-                            <label>Thẻ keywords</label>
-                            <textarea class="form-control" rows="4" name="site_keywords_vi" id="site_keywords_vi">{{ $settingArr['site_keywords_vi'] }}</textarea>
-                          </div>  
-                          <div class="form-group">
-                            <label>Nội dung tùy chỉnh</label>
-                            <textarea class="form-control" rows="6" name="custom_text_vi" id="custom_text_vi">{{ $settingArr['custom_text_vi'] }}</textarea>
-                          </div>
+                          
                     </div><!--end thong tin co ban--> 
                     <div role="tabpanel" class="tab-pane" id="seoEn">                        
                         <div class="form-group">
@@ -170,15 +149,6 @@
                             <label>Meta desciption</label>
                             <textarea class="form-control" rows="6" name="site_description_en" id="site_description_en">{{ $settingArr['site_description_en'] }}</textarea>
                           </div>  
-
-                          <div class="form-group">
-                            <label>Meta keywords</label>
-                            <textarea class="form-control" rows="4" name="site_keywords_en" id="site_keywords_en">{{ $settingArr['site_keywords_en'] }}</textarea>
-                          </div>  
-                          <div class="form-group">
-                            <label>Custom text</label>
-                            <textarea class="form-control" rows="6" name="custom_text_en" id="custom_text_en">{{ $settingArr['custom_text_en'] }}</textarea>
-                          </div>
                     </div><!--end thong tin co ban--> 
                    
                   </div>
@@ -191,12 +161,8 @@
         </div><!--meta SEO-->        
       <!--/.col (left) -->      
     </div>
-<input type="hidden" name="logo" id="logo" value="{{ $settingArr['logo'] }}"/>          
-<input type="hidden" name="logo_name" id="logo_name" value="{{ old('logo_name') }}"/>
-<input type="hidden" name="favicon" id="favicon" value="{{ $settingArr['favicon'] }}"/>          
-<input type="hidden" name="favicon_name" id="favicon_name" value="{{ old('favicon_name') }}"/>
-<input type="hidden" name="banner" id="banner" value="{{ $settingArr['banner'] }}"/>          
-<input type="hidden" name="banner_name" id="banner_name" value="{{ old('banner_name') }}"/>
+          
+
 
     </form>
     <!-- /.row -->
