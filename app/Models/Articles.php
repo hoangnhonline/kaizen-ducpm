@@ -32,6 +32,7 @@ class Articles extends Model  {
         'is_hot', 
         'status', 
         'display_order', 
+        'image_url_2',
         'description', 
         'image_url', 
         'content', 

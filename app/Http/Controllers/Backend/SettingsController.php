@@ -54,7 +54,7 @@ class SettingsController  extends Controller
 
             $destionation = date('Y/m/d'). '/'. end($tmp);
             
-            File::move(config('decoos.upload_path').$dataArr['logo'], config('decoos.upload_path').$destionation);
+            File::move(config('kaizen.upload_path').$dataArr['logo'], config('kaizen.upload_path').$destionation);
             
             $dataArr['logo'] = $destionation;
         }
@@ -69,7 +69,7 @@ class SettingsController  extends Controller
 
             $destionation = date('Y/m/d'). '/'. end($tmp);
             
-            File::move(config('decoos.upload_path').$dataArr['favicon'], config('decoos.upload_path').$destionation);
+            File::move(config('kaizen.upload_path').$dataArr['favicon'], config('kaizen.upload_path').$destionation);
             
             $dataArr['favicon'] = $destionation;
         }
@@ -84,7 +84,7 @@ class SettingsController  extends Controller
 
             $destionation = date('Y/m/d'). '/'. end($tmp);
             
-            File::move(config('decoos.upload_path').$dataArr['banner'], config('decoos.upload_path').$destionation);
+            File::move(config('kaizen.upload_path').$dataArr['banner'], config('kaizen.upload_path').$destionation);
             
             $dataArr['banner'] = $destionation;
         }        

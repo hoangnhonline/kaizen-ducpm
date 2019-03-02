@@ -20,7 +20,7 @@
       @if(Session::has('message'))
       <p class="alert alert-info" >{{ Session::get('message') }}</p>
       @endif
-      <a href="{{ route('product.create', ['loai_id' => $arrSearch['loai_id'], 'cate_id' => $arrSearch['cate_id']]) }}" class="btn btn-info btn-sm" style="margin-bottom:5px">Tạo mới</a>
+      <a href="{{ route('product.create')}}" class="btn btn-info btn-sm" style="margin-bottom:5px">Tạo mới</a>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Bộ lọc</h3>
@@ -28,16 +28,7 @@
         <div class="panel-body">
           <form class="form-inline" id="searchForm" role="form" method="GET" action="{{ route('product.index') }}">
             
-              <div class="form-group">
-              <label for="email">Danh mục</label>
-
-              <select class="form-control" name="cate_id" id="cate_id">
-                <option value="">--Tất cả--</option>
-                @foreach( $cateArr as $value )
-                <option value="{{ $value->id }}" {{ $value->id == $arrSearch['cate_id'] ? "selected" : "" }}>{{ $value->name_vi }}</option>
-                @endforeach
-              </select>
-            </div>
+            
             <div class="form-group">
               <label for="email">Tên</label>
               <input type="text" class="form-control" name="name" value="{{ $arrSearch['name'] }}">
@@ -59,10 +50,7 @@
           </div>  
           <table class="table table-bordered" id="table-list-data">
             <tr>
-              <th style="width: 1%">#</th>
-              @if($arrSearch['is_hot'] == 1 && $arrSearch['loai_id'] > 0 )
-              <th style="width: 1%;white-space:nowrap">Thứ tự</th>
-              @endif
+              <th style="width: 1%">#</th>              
               <th width="100px">Hình ảnh</th>
               <th style="text-align:left">Thông tin sản phẩm</th>                              
               <th width="1%;white-space:nowrap">Thao tác</th>
@@ -76,16 +64,12 @@
                 ?>
               <tr id="row-{{ $item->id }}">
                 <td><span class="order">{{ $i }}</span></td>
-                @if($arrSearch['is_hot'] == 1 && $arrSearch['loai_id'] > 0 )
-                <td style="vertical-align:middle;text-align:center">
-                  <img src="{{ URL::asset('admin/dist/img/move.png')}}" class="move img-thumbnail" alt="Cập nhật thứ tự"/>
-                </td>
-                @endif
+               
                 <td>
                   <img class="img-thumbnail lazy" width="80" data-original="{{ $item->image_url ? Helper::showImage($item->image_url) : URL::asset('admin/dist/img/no-image.jpg') }}" alt="Nổi bật" title="Nổi bật" />
                 </td>
                 <td>                  
-                  <a style="color:#333;font-weight:bold" href="{{ route( 'product.edit', [ 'id' => $item->id ]) }}">{{ $item->name_vi }} / {{ $item->name_en }}/ {{ $item->name_cn }} </a> &nbsp; <br />
+                  <a style="color:#333;font-weight:bold" href="{{ route( 'product.edit', [ 'id' => $item->id ]) }}">{{ $item->name_vi }} / {{ $item->name_en }} </a> &nbsp; <br />
                   <strong style="color:#337ab7;font-style:italic">{{ $item->ten_cate }}</strong>            
                 </td>
                 <td style="white-space:nowrap; text-align:right">

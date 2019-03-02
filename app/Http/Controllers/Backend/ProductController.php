@@ -30,8 +30,8 @@ class ProductController extends Controller
         $arrSearch['status'] = $status = isset($request->status) ? $request->status : 1;
         $arrSearch['is_hot'] = $is_hot = isset($request->is_hot) ? $request->is_hot : null;
         $arrSearch['is_sale'] = $is_sale = isset($request->is_sale) ? $request->is_sale : null;
-        $arrSearch['loai_id'] = $loai_id = isset($request->loai_id) ? $request->loai_id : null;
-        $arrSearch['cate_id'] = $cate_id = isset($request->cate_id) ? $request->cate_id : null;      
+        //$arrSearch['loai_id'] = $loai_id = isset($request->loai_id) ? $request->loai_id : null;
+        //$arrSearch['cate_id'] = $cate_id = isset($request->cate_id) ? $request->cate_id : null;      
         $arrSearch['name'] = $name = isset($request->name) && trim($request->name) != '' ? trim($request->name) : '';
         
         $query = Product::where('product.status', $status);
@@ -41,12 +41,12 @@ class ProductController extends Controller
         if( $is_sale ){
             $query->where('product.is_sale', $is_sale);
         }
-        if( $loai_id ){
-            $query->where('product.loai_id', $loai_id);
-        }
-        if( $cate_id ){
-            $query->where('product.cate_id', $cate_id);
-        }       
+        // if( $loai_id ){
+        //     $query->where('product.loai_id', $loai_id);
+        // }
+        // if( $cate_id ){
+        //     $query->where('product.cate_id', $cate_id);
+        // }       
         if( $name != ''){
             $query->where('product.name_vi', 'LIKE', '%'.$name.'%');
             $query->orWhere('product.name_en', 'LIKE', '%'.$name.'%');
@@ -70,11 +70,11 @@ class ProductController extends Controller
     */
     public function create(Request $request)
     {        
-        $cate_id = $request->cate_id ? $request->cate_id : null;
+        //$cate_id = $request->cate_id ? $request->cate_id : null;
                    
-        $cateArr = Cate::where('status', 1)->select('id', 'name_vi')->orderBy('display_order', 'desc')->get();
+       // $cateArr = Cate::where('status', 1)->select('id', 'name_vi')->orderBy('display_order', 'desc')->get();
        
-        return view('backend.product.create', compact('cateArr', 'cate_id'));
+        return view('backend.product.create');
     }
 
     /**
@@ -89,28 +89,28 @@ class ProductController extends Controller
         
         $this->validate($request,[          
             'name_vi' => 'required',
-            'name_cn' => 'required' ,
+            //'name_cn' => 'required' ,
             'name_en' => 'required',              
         ],
         [            
             'name_vi.required' => 'Bạn chưa nhập tên sản phẩm tiếng Việt ',            
             'name_en.required' => 'Bạn chưa nhập tên sản phẩm tiếng Anh',
-            'name_cn.required' => 'Bạn chưa nhập tên sản phẩm tiếng Trung',            
+            //'name_cn.required' => 'Bạn chưa nhập tên sản phẩm tiếng Trung',            
         ]);
 
         $dataArr['is_hot'] = isset($dataArr['is_hot']) ? 1 : 0;       
         
         $dataArr['alias_vi'] = str_slug($dataArr['name_vi'],' ');
-        $dataArr['alias_cn'] = str_slug($dataArr['name_cn'],' ');
+       // $dataArr['alias_cn'] = str_slug($dataArr['name_cn'],' ');
         $dataArr['alias_en'] = str_slug($dataArr['name_en'],' ');
 
         $dataArr['slug_vi'] = str_slug($dataArr['name_vi'],'-');
-        $dataArr['slug_cn'] = "c-".str_slug($dataArr['name_en'],'-');
+        //$dataArr['slug_cn'] = "c-".str_slug($dataArr['name_en'],'-');
         $dataArr['slug_en'] = str_slug($dataArr['name_en'],'-');
 
         $dataArr['content_vi'] = str_replace("[Caption]", "", $dataArr['content_vi']);
         $dataArr['content_en'] = str_replace("[Caption]", "", $dataArr['content_en']);
-        $dataArr['content_cn'] = str_replace("[Caption]", "", $dataArr['content_cn']);
+        //$dataArr['content_cn'] = str_replace("[Caption]", "", $dataArr['content_cn']);
         
         $dataArr['status'] = 1;
 
@@ -123,7 +123,7 @@ class ProductController extends Controller
         $this->storeMeta($sp_id, 0, $dataArr);
         Session::flash('message', 'Tạo mới thành công');
 
-        return redirect()->route('product.index', ['cate_id' => $dataArr['cate_id']]);
+        return redirect()->route('product.index');
     }
 
     public function storeMeta( $id, $meta_id, $dataArr ){
@@ -131,13 +131,13 @@ class ProductController extends Controller
         $arrData = [
             'title_vi' => $dataArr['meta_title_vi'], 
             'description_vi' => $dataArr['meta_description_vi'], 
-            'title_cn' => $dataArr['meta_title_cn'], 
-            'description_cn' => $dataArr['meta_description_cn'], 
+            //'title_cn' => $dataArr['meta_title_cn'], 
+            //'description_cn' => $dataArr['meta_description_cn'], 
             'custom_text_vi' => $dataArr['custom_text_vi'], 
             'title_en' => $dataArr['meta_title_en'], 
             'description_en' => $dataArr['meta_description_en'], 
             'custom_text_en' => $dataArr['custom_text_en'], 
-            'custom_text_cn' => $dataArr['custom_text_cn'], 
+            //'custom_text_cn' => $dataArr['custom_text_cn'], 
             'updated_user' => Auth::user()->id
         ];
         if( $meta_id == 0){
@@ -160,7 +160,7 @@ class ProductController extends Controller
         {
             foreach ($hinhXoaArr as $image_id_xoa) {
                 $model = ProductImg::find($image_id_xoa);
-                $urlXoa = config('decoos.upload_path')."/".$model->image_url;
+                $urlXoa = config('kaizen.upload_path')."/".$model->image_url;
                 if(is_file($urlXoa)){
                     unlink($urlXoa);
                 }
@@ -188,7 +188,7 @@ class ProductController extends Controller
 
                         $destionation = date('Y/m/d'). '/'. end($tmp);
                         
-                        File::move(config('decoos.upload_path').$image_url, config('decoos.upload_path').$destionation);
+                        File::move(config('kaizen.upload_path').$image_url, config('kaizen.upload_path').$destionation);
 
                         $imageArr['name'][] = $destionation;
 
@@ -260,28 +260,28 @@ class ProductController extends Controller
         
         $this->validate($request,[          
             'name_vi' => 'required',
-            'name_cn' => 'required' ,
+            //'name_cn' => 'required' ,
             'name_en' => 'required',              
         ],
         [            
             'name_vi.required' => 'Bạn chưa nhập tên sản phẩm tiếng Việt ',            
             'name_en.required' => 'Bạn chưa nhập tên sản phẩm tiếng Anh',
-            'name_cn.required' => 'Bạn chưa nhập tên sản phẩm tiếng Trung',            
+            //'name_cn.required' => 'Bạn chưa nhập tên sản phẩm tiếng Trung',            
         ]);
 
         $dataArr['is_hot'] = isset($dataArr['is_hot']) ? 1 : 0;       
         
         $dataArr['alias_vi'] = str_slug($dataArr['name_vi'],' ');
-        $dataArr['alias_cn'] = str_slug($dataArr['name_cn'],' ');
+        //$dataArr['alias_cn'] = str_slug($dataArr['name_cn'],' ');
         $dataArr['alias_en'] = str_slug($dataArr['name_en'],' ');
 
         $dataArr['slug_vi'] = str_slug($dataArr['name_vi'],'-');
-        $dataArr['slug_cn'] = "c-".str_slug($dataArr['name_en'],'-');
+       // $dataArr['slug_cn'] = "c-".str_slug($dataArr['name_en'],'-');
         $dataArr['slug_en'] = str_slug($dataArr['name_en'],'-');
 
         $dataArr['content_vi'] = str_replace("[Caption]", "", $dataArr['content_vi']);
         $dataArr['content_en'] = str_replace("[Caption]", "", $dataArr['content_en']);
-        $dataArr['content_cn'] = str_replace("[Caption]", "", $dataArr['content_cn']);
+        //$dataArr['content_cn'] = str_replace("[Caption]", "", $dataArr['content_cn']);
         
         $dataArr['status'] = 1;
 

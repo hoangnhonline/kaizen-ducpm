@@ -45,7 +45,7 @@
                   <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active"><a href="#infoVi" aria-controls="infoVi" role="tab" data-toggle="tab">VN</a></li>
                     <li role="presentation"><a href="#infoEn" aria-controls="infoEn" role="tab" data-toggle="tab">EN</a></li> 
-                    <li role="presentation"><a href="#infoCn" aria-controls="infoCn" role="tab" data-toggle="tab">CN</a></li>                    
+                    <!-- <li role="presentation"><a href="#infoCn" aria-controls="infoCn" role="tab" data-toggle="tab">CN</a></li>  -->                   
                   </ul>
 
                   <!-- Tab panes -->
@@ -89,8 +89,8 @@
                           <textarea class="form-control" rows="10" name="content_en" id="content_en">{{ old('content_en') }}</textarea>
                         </div>
                     </div><!--end thong tin co ban--> 
-                    <div role="tabpanel" class="tab-pane" id="infoCn">                        
-                          <!-- text input -->
+                    <!-- <div role="tabpanel" class="tab-pane" id="infoCn">                        
+                        
                         <div class="form-group">
                           <label>Name <span class="red-star">*</span></label>
                           <input type="text" class="form-control" name="title_cn" id="title_cn" value="{{ old('title_cn') }}">
@@ -99,7 +99,7 @@
                           <label>Content</label>
                           <textarea class="form-control" rows="10" name="content_cn" id="content_cn">{{ old('content_cn') }}</textarea>
                         </div>
-                    </div><!--end thong tin co ban--> 
+                    </div> --><!--end thong tin co ban--> 
                    
                   </div>
 

@@ -46,7 +46,7 @@ class UploadController extends Controller
         $count = 0;
         if($dataArr['myfile']){
             
-            $url = config('decoos.upload_url');
+            $url = config('kaizen.upload_url');
 
             foreach( $dataArr['myfile'] as $file ){
                 $count++;

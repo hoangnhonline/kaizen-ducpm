@@ -46,7 +46,7 @@
                   <select class="form-control" name="lang_id" id="lang_id">                                
                     <option value="1" {{ 1 ==  $detail->lang_id ? "selected" : "" }}>Tiếng Việt</option>
                     <option value="2" {{ 2 ==  $detail->lang_id ? "selected" : "" }}>Tiếng Anh</option>
-                    <option value="3" {{ 3 ==  $detail->lang_id ? "selected" : "" }}>Tiếng Trung</option>                  
+                    <!-- <option value="3" {{ 3 ==  $detail->lang_id ? "selected" : "" }}>Tiếng Trung</option>   -->                
                   </select>
                 </div>                          
                 
@@ -57,15 +57,27 @@
                 </div>               
                 
                 <div class="form-group" style="margin-top:10px;margin-bottom:10px">  
-                    <label class="col-md-3 row">Hình ảnh</label>    
+                    <label class="col-md-3 row">Ảnh thumbnail (556 x 344px)</label>    
                     <div class="col-md-9">
-                      <img id="thumbnail_image" src="{{ $detail->image_url ? Helper::showImage($detail->image_url ) : URL::asset('public/admin/dist/img/img.png') }}" class="img-thumbnail" width="145" height="85">
+                      <img id="thumbnail_image" src="{{ $detail->image_url ? Helper::showImage($detail->image_url ) : URL::asset('public/admin/dist/img/img.png') }}" class="img-thumbnail" width="150">
                    
                       <button class="btn btn-default btn-sm btnSingleUpload" data-set="image_url" data-image="thumbnail_image" type="button"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Upload</button>
                     </div>
+                    <input type="hidden" name="image_url" id="image_url" value="{{ old('image_url', $detail->image_url) }}"/>
                     <div style="clear:both"></div>
                   </div> 
-                <div style="clear:both"></div>                
+                <div style="clear:both"></div>        
+                 <div class="form-group" style="margin-top:10px;margin-bottom:10px">  
+                    <label class="col-md-3 row">Ảnh chi tiết (0 x 350px)</label>    
+                    <div class="col-md-9">
+                      <img id="thumbnail_image_2" src="{{ $detail->image_url_2 ? Helper::showImage($detail->image_url_2 ) : URL::asset('public/admin/dist/img/img.png') }}" class="img-thumbnail" height="150">
+                   
+                      <button class="btn btn-default btn-sm btnSingleUpload" data-set="image_url_2" data-image="thumbnail_image_2" type="button"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Upload</button>
+                    </div>
+                    <input type="hidden" name="image_url_2" id="image_url_2" value="{{ old('image_url_2', $detail->image_url_2) }}"/>
+                    <div style="clear:both"></div>
+                  </div> 
+                <div style="clear:both"></div>           
                 <!-- textarea -->
                 <div class="form-group">
                   <label>Mô tả</label>

@@ -34,31 +34,20 @@ class CateController extends Controller
         $lang = $request->lang ? $request->lang : 'vi';
       
         $productList = [];
-        $slug = $request->slug;        
-        $detailCate = Cate::where('slug_'.$lang, $slug)->first();
-        if(!$detailCate){
-            return redirect()->route('home');
-        }
-        $cate_id = $detailCate->id;
         
-        $socialImage = $detailCate->icon_url;
-        if( $detailCate->meta_id > 0){                            
-           $seo = MetaData::find( $detailCate->meta_id )->toArray();           
-           $seo['title'] = $seo['title_'.$lang];
-           $seo['description'] = $seo['description_'.$lang];         
-        }else{
-            $seo['title'] = $seo['description'] = $lang == 'vi' ? $detailCate->name_vi : $rs->name_en;
-        }
-         $text_key = "text_".$lang;
+        $socialImage = "";
+        
+        $seo['title'] = $seo['description'] = $lang == 'vi' ? "Sản phẩm" : "Products";
+        
+        $text_key = "text_".$lang;
         $slug_key = "slug_".$lang;
         $name_key = "name_".$lang;
         $title_key = "title_".$lang;
         $content_key = "content_".$lang;  
-        $query = Product::where('cate_id', $cate_id);
+        $query = Product::where('status', 1);
         $productList = $query->paginate(100);
         return view('frontend.cate.index', compact(
-                    'productList', 
-                    'cateArr', 
+                    'productList',                     
                     'detailCate',
                     'socialImage', 
                     'seo',

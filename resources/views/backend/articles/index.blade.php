@@ -32,7 +32,7 @@
                 <select class="form-control" name="lang_id" id="lang_id">                                
                   <option value="1" {{ 1 == $lang_id ? "selected" : "" }}>Tiếng Việt</option>
                   <option value="2" {{ 2 == $lang_id ? "selected" : "" }}>Tiếng Anh</option> 
-                   <option value="3" {{ 3 == $lang_id ? "selected" : "" }}>Tiếng Trung</option>                
+                  <!--  <option value="3" {{ 3 == $lang_id ? "selected" : "" }}>Tiếng Trung</option>           -->      
                 </select>
              </div>           
             <div class="form-group">

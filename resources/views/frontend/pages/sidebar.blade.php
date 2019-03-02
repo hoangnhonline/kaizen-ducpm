@@ -24,17 +24,7 @@
                             @endforeach
 						</ul>
 					</li>
-					<li class="nav-item ">
-						<a href="javascript:;" class="nav-link">{!! $textArr['san-pham']->$text_key !!}</a>
-						<i class="fa fa-angle-down"></i>
-						<ul class="dropdown-menu">							
-							@foreach($cateList as $cate)
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('cates', ['lang' => $lang, 'slug' => $cate->$slug_key])}}">{!! $cate->$name_key !!}</a>
-                            </li>
-                            @endforeach
-						</ul>
-					</li>
+						
 
 					<li class="nav-item ">
 						<a class="nav-link" href="{{ route('news', $lang) }}">{!! $textArr['tin-tuc']->$text_key !!} </a>

@@ -66,16 +66,16 @@ class PagesController extends Controller
         ]);
 
         $dataArr['alias_vi'] = str_slug($dataArr['title_vi'],' ');
-        $dataArr['alias_cn'] = str_slug($dataArr['title_cn'],' ');
+        //$dataArr['alias_cn'] = str_slug($dataArr['title_cn'],' ');
         $dataArr['alias_en'] = str_slug($dataArr['title_en'],' ');
 
         $dataArr['slug_vi'] = str_slug($dataArr['title_vi'],'-');
-        $dataArr['slug_cn'] = "c-".str_slug($dataArr['title_en'],'-');
+       // $dataArr['slug_cn'] = "c-".str_slug($dataArr['title_en'],'-');
         $dataArr['slug_en'] = str_slug($dataArr['title_en'],'-');
 
         $dataArr['content_vi'] = str_replace("[Caption]", "", $dataArr['content_vi']);
         $dataArr['content_en'] = str_replace("[Caption]", "", $dataArr['content_en']);
-        $dataArr['content_cn'] = str_replace("[Caption]", "", $dataArr['content_cn']);
+       // $dataArr['content_cn'] = str_replace("[Caption]", "", $dataArr['content_cn']);
                    
         $dataArr['created_user'] = Auth::user()->id;
         $dataArr['updated_user'] = Auth::user()->id;
@@ -142,16 +142,16 @@ class PagesController extends Controller
         ]);
 
         $dataArr['alias_vi'] = str_slug($dataArr['title_vi'],' ');
-        $dataArr['alias_cn'] = str_slug($dataArr['title_cn'],' ');
+       // $dataArr['alias_cn'] = str_slug($dataArr['title_cn'],' ');
         $dataArr['alias_en'] = str_slug($dataArr['title_en'],' ');
 
         $dataArr['slug_vi'] = str_slug($dataArr['title_vi'],'-');
-        $dataArr['slug_cn'] = "c-".str_slug($dataArr['title_en'],'-');
+       // $dataArr['slug_cn'] = "c-".str_slug($dataArr['title_en'],'-');
         $dataArr['slug_en'] = str_slug($dataArr['title_en'],'-');
 
         $dataArr['content_vi'] = str_replace("[Caption]", "", $dataArr['content_vi']);
         $dataArr['content_en'] = str_replace("[Caption]", "", $dataArr['content_en']);
-        $dataArr['content_cn'] = str_replace("[Caption]", "", $dataArr['content_cn']);
+       // $dataArr['content_cn'] = str_replace("[Caption]", "", $dataArr['content_cn']);
             
         $dataArr['updated_user'] = Auth::user()->id; 
 
@@ -169,13 +169,13 @@ class PagesController extends Controller
         $arrData = [
             'title_vi' => $dataArr['meta_title_vi'], 
             'description_vi' => $dataArr['meta_description_vi'], 
-            'title_cn' => $dataArr['meta_title_cn'], 
-            'description_cn' => $dataArr['meta_description_cn'], 
+            //'title_cn' => $dataArr['meta_title_cn'], 
+            //'description_cn' => $dataArr['meta_description_cn'], 
             'custom_text_vi' => $dataArr['custom_text_vi'], 
             'title_en' => $dataArr['meta_title_en'], 
             'description_en' => $dataArr['meta_description_en'], 
             'custom_text_en' => $dataArr['custom_text_en'], 
-            'custom_text_cn' => $dataArr['custom_text_cn'], 
+           // 'custom_text_cn' => $dataArr['custom_text_cn'], 
             'updated_user' => Auth::user()->id
         ];
         if( $meta_id == 0){

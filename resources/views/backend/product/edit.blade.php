@@ -49,16 +49,7 @@
                   <!-- Tab panes -->
                   <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="home">                        
-                          <div class="form-group">
-                          <label for="email">Danh mục</label>
-
-                          <select class="form-control" name="cate_id" id="cate_id">
-                            <option value="">--Chọn--</option>
-                            @foreach( $cateArr as $value )
-                            <option value="{{ $value->id }}" {{ $value->id == old('cate_id', $detail->cate_id)? "selected" : "" }}>{{ $value->name_vi }}</option>
-                            @endforeach
-                          </select>
-                        </div>  
+                          
                         <div class="form-group" >                  
                           <label>Tên tiếng Việt <span class="red-star">*</span></label>
                           <input type="text" class="form-control" name="name_vi" id="name_vi" value="{{ old('name_vi', $detail->name_vi) }}">
@@ -67,23 +58,33 @@
                           <label>Tên tiếng Anh <span class="red-star">*</span></label>
                           <input type="text" class="form-control" name="name_en" id="name_en" value="{{ old('name_en', $detail->name_en) }}">
                         </div>
-                        <div class="form-group" >                  
+                        <!-- <div class="form-group" >                  
                           <label>Tên tiếng Trung <span class="red-star">*</span></label>
                           <input type="text" class="form-control" name="name_cn" id="name_cn" value="{{ old('name_cn', $detail->name_cn) }}">
-                        </div>                                               
+                        </div> -->                                               
                         <div class="form-group">
                           <div class="checkbox">
                               <label><input type="checkbox" name="is_hot" value="1" {{ old('is_hot', $detail->is_hot) == 1 ? "checked" : "" }}> Hiện trang chủ </label>
                           </div>                          
                         </div>   
                         <div class="form-group" style="margin-top:10px;margin-bottom:10px">  
-                          <label class="col-md-3 row">Hình ảnh</label>    
+                          <label class="col-md-3 row">Ảnh thumbnail (390 x 220px)</label>    
                           <div class="col-md-9">
-                            <img id="thumbnail_image" src="{{ $detail->image_url ? Helper::showImage($detail->image_url ) : URL::asset('public/admin/dist/img/img.png') }}" class="img-thumbnail" width="145" height="85">
+                            <img id="thumbnail_image" src="{{ $detail->image_url ? Helper::showImage($detail->image_url ) : URL::asset('public/admin/dist/img/img.png') }}" class="img-thumbnail" width="145" >
                          
                             <button class="btn btn-default btn-sm btnSingleUpload" data-set="image_url" data-image="thumbnail_image" type="button"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Upload</button>
                           </div>
-						  <input type="hidden" name="image_url" id="image_url" value="{{ old('image_url', $detail->image_url) }}"/>
+						              <input type="hidden" name="image_url" id="image_url" value="{{ old('image_url', $detail->image_url) }}"/>
+                          <div style="clear:both"></div>
+                        </div> 
+                        <div class="form-group" style="margin-top:10px;margin-bottom:10px">  
+                          <label class="col-md-3 row">Ảnh chi tiết (0 x 350px)</label>    
+                          <div class="col-md-9">
+                            <img id="thumbnail_image_2" src="{{ $detail->image_url_2 ? Helper::showImage($detail->image_url_2 ) : URL::asset('public/admin/dist/img/img.png') }}" class="img-thumbnail"  height="80">
+                         
+                            <button class="btn btn-default btn-sm btnSingleUpload" data-set="image_url_2" data-image="thumbnail_image_2" type="button"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Upload</button>
+                          </div>
+                          <input type="hidden" name="image_url_2" id="image_url_2" value="{{ old('image_url_2', $detail->image_url_2) }}"/>
                           <div style="clear:both"></div>
                         </div>                                                               
                          <div class="form-group">
@@ -94,10 +95,10 @@
                           <label>Chi tiết tiếng Anh</label>
                           <textarea class="form-control" rows="10" name="content_en" id="content_en">{{ old('content_en', $detail->content_en) }}</textarea>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                           <label>Chi tiết tiếng Trung</label>
                           <textarea class="form-control" rows="10" name="content_cn" id="content_cn">{{ old('content_cn', $detail->content_cn) }}</textarea>
-                        </div>
+                        </div> -->
                         <div class="clearfix"></div>
                     </div><!--end thong tin co ban-->                     
                   </div>
@@ -130,7 +131,7 @@
                   <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active"><a href="#seoVi" aria-controls="seoVi" role="tab" data-toggle="tab">VN</a></li>
                     <li role="presentation"><a href="#seoEn" aria-controls="seoEn" role="tab" data-toggle="tab">EN</a></li>  
-                    <li role="presentation"><a href="#seoCn" aria-controls="seoCn" role="tab" data-toggle="tab">CN</a></li>                    
+                    <!-- <li role="presentation"><a href="#seoCn" aria-controls="seoCn" role="tab" data-toggle="tab">CN</a></li>  -->                   
                   </ul>
 
                   <!-- Tab panes -->
@@ -166,12 +167,12 @@
                             <textarea class="form-control" rows="4" name="custom_text_en" id="custom_text_en">{{ old('custom_text_en', $meta->custom_text_en) }}</textarea>
                           </div>
                     </div><!--end thong tin co ban-->
-                    <div role="tabpanel" class="tab-pane" id="seoCn">                        
+                    <!-- <div role="tabpanel" class="tab-pane" id="seoCn">                        
                         <div class="form-group">
                             <label>Meta title </label>
                             <input type="text" class="form-control" name="meta_title_cn" id="meta_title_cn" value="{{ old('meta_title_cn', $meta->title_cn) }}">
                           </div>
-                          <!-- textarea -->
+                          
                           <div class="form-group">
                             <label>Meta desciption</label>
                             <textarea class="form-control" rows="4" name="meta_description_cn" id="meta_description_cn">{{ old('meta_description_cn', $meta->description_cn) }}</textarea>
@@ -180,7 +181,7 @@
                             <label>Custom text</label>
                             <textarea class="form-control" rows="4" name="custom_text_cn" id="custom_text_cn">{{ old('custom_text_cn', $meta->custom_text_cn) }}</textarea>
                           </div>
-                    </div><!--end thong tin co ban--> 
+                    </div> --><!--end thong tin co ban--> 
                    
                   </div>
 

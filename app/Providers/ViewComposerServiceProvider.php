@@ -41,9 +41,9 @@ class ViewComposerServiceProvider extends ServiceProvider
 	{
 		
 		view()->composer( '*' , function( $view ){			
-	        $settingArr = Settings::whereRaw('1')->lists('value', 'name');	       
+	        $settingArr = Settings::whereRaw('1')->lists('value', 'name');     
 	        
-            $cateList = Cate::orderBy('display_order')->get();         
+            //$cateList = Cate::orderBy('display_order')->get();         
         	$textList = Text::all();
         	foreach($textList as $text){
         		$textArr[$text->text_key] = $text;
@@ -54,7 +54,13 @@ class ViewComposerServiceProvider extends ServiceProvider
         		$footerArr[$tp->id] = $tp;
         	}
         	$aboutList = Pages::whereIn('id', [1,2])->get();
-			$view->with(['settingArr' => $settingArr,'cateList' => $cateList, 'footerArr' => $footerArr, 'textArr' => $textArr, 'aboutList' => $aboutList,
+        	$routeName = \Request::route()->getName();
+			$view->with([
+				'settingArr' => $settingArr, 
+				'footerArr' => $footerArr, 
+				'textArr' => $textArr, 
+				'aboutList' => $aboutList,
+				'routeName' => $routeName
 				
 
 		]);

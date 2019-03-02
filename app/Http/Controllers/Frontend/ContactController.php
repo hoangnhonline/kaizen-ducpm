@@ -22,14 +22,14 @@ class ContactController extends Controller
             'email' => 'email|required',
             'fullname' => 'required',
             'content' => 'required',
-            'phone' => 'required',            
+            //'phone' => 'required',            
         ],
         [
                   
             'fullname.required' => 'Bạn chưa nhập họ và tên.',
             'email.required' => 'Bạn chưa nhập email.',
             'email.email' => 'Địa chỉ email không hợp lệ.',
-            'phone.required' => 'Bạn chưa nhập số điện thoại.',
+            //'phone.required' => 'Bạn chưa nhập số điện thoại.',
             'content.required' => 'Bạn chưa nhập nội dung.',
             
         ]);       
