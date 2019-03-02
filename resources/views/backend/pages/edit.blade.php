@@ -62,13 +62,14 @@
                           <input type="text" class="form-control" name="title_vi" id="title_vi" value="{{ old('title_vi') ? old('title_vi') : $detail->title_vi }}">
                         </div>                                                                                      
                         <div class="form-group" style="margin-top:10px;margin-bottom:10px">  
-                          <label class="col-md-3 row">Thumbnail </label>    
+                          <label class="col-md-3 row">Thumbnail (594 x 333px)</label>    
                           <div class="col-md-9">
                             <img id="thumbnail_image" src="{{ $detail->image_url ? Helper::showImage($detail->image_url ) : URL::asset('public/admin/dist/img/img.png') }}" class="img-thumbnail" width="145" height="85">
                             
                             <input type="file" id="file-image" style="display:none" />
                          
-                            <button class="btn btn-default" id="btnUploadImage" type="button"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Upload</button>
+                            <button class="btn btn-default btnSingleUpload" data-set="image_url" data-image="thumbnail_image" type="button"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Upload</button>
+                            <input type="hidden" name="image_url" value="{{ old('image_url', $detail->image_url ) }}">
                           </div>
                           <div style="clear:both"></div>
                         </div>
@@ -134,7 +135,7 @@
                   <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active"><a href="#seoVi" aria-controls="seoVi" role="tab" data-toggle="tab">VN</a></li>
                     <li role="presentation"><a href="#seoEn" aria-controls="seoEn" role="tab" data-toggle="tab">EN</a></li> 
-                    <li role="presentation"><a href="#seoCn" aria-controls="seoCn" role="tab" data-toggle="tab">CN</a></li>                   
+                  <!--   <li role="presentation"><a href="#seoCn" aria-controls="seoCn" role="tab" data-toggle="tab">CN</a></li>  -->                  
                   </ul>
 
                   <!-- Tab panes -->
@@ -170,12 +171,12 @@
                             <textarea class="form-control" rows="4" name="custom_text_en" id="custom_text_en">{{ !empty((array)$meta) ? $meta->custom_text_en : ""  }}</textarea>
                           </div>
                     </div><!--end thong tin co ban--> 
-                    <div role="tabpanel" class="tab-pane" id="seoCn">                        
+                    <!-- <div role="tabpanel" class="tab-pane" id="seoCn">                        
                         <div class="form-group">
                             <label>Meta title </label>
                             <input type="text" class="form-control" name="meta_title_cn" id="meta_title_cn" value="{{ !empty((array)$meta) ? $meta->title_cn : "" }}">
                           </div>
-                          <!-- textarea -->
+                     
                           <div class="form-group">
                             <label>Meta desciption</label>
                             <textarea class="form-control" rows="4" name="meta_description_cn" id="meta_description_cn">{{ !empty((array)$meta) ? $meta->description_cn : "" }}</textarea>
@@ -184,7 +185,7 @@
                             <label>Custom text</label>
                             <textarea class="form-control" rows="4" name="custom_text_cn" id="custom_text_cn">{{ !empty((array)$meta) ? $meta->custom_text_cn : ""  }}</textarea>
                           </div>
-                    </div><!--end thong tin co ban--> 
+                    </div> --><!--end thong tin co ban--> 
                    
                   </div>
                 </div>             
@@ -224,111 +225,8 @@
             filebrowserImageUploadUrl: "{{ URL::asset('/backend/dist/js/kcfinder/upload.php?type=images') }}",
             filebrowserFlashUploadUrl: "{{ URL::asset('/backend/dist/js/kcfinder/upload.php?type=flash') }}"
         });   
-        var editor2 = CKEDITOR.replace( 'content_cn',{
-            language : 'vi',
-            height: 300,
-            filebrowserBrowseUrl: "{{ URL::asset('/backend/dist/js/kcfinder/browse.php?type=files') }}",
-            filebrowserImageBrowseUrl: "{{ URL::asset('/backend/dist/js/kcfinder/browse.php?type=images') }}",
-            filebrowserFlashBrowseUrl: "{{ URL::asset('/backend/dist/js/kcfinder/browse.php?type=flash') }}",
-            filebrowserUploadUrl: "{{ URL::asset('/backend/dist/js/kcfinder/upload.php?type=files') }}",
-            filebrowserImageUploadUrl: "{{ URL::asset('/backend/dist/js/kcfinder/upload.php?type=images') }}",
-            filebrowserFlashUploadUrl: "{{ URL::asset('/backend/dist/js/kcfinder/upload.php?type=flash') }}"
-        });   
-        $('#btnUploadImage').click(function(){        
-          $('#file-image').click();
-        });      
-        var files = "";
-        $('#file-image').change(function(e){
-           files = e.target.files;
-           
-           if(files != ''){
-             var dataForm = new FormData();        
-            $.each(files, function(key, value) {
-               dataForm.append('file', value);
-            });   
-            
-            dataForm.append('date_dir', 1);
-            dataForm.append('folder', 'tmp');
-
-            $.ajax({
-              url: $('#route_upload_tmp_image').val(),
-              type: "POST",
-              async: false,      
-              data: dataForm,
-              processData: false,
-              contentType: false,
-              success: function (response) {
-                if(response.image_path){
-                  $('#thumbnail_image').attr('src',$('#upload_url').val() + response.image_path);
-                  $( '#image_url' ).val( response.image_path );
-                  $( '#image_name' ).val( response.image_name );
-                }
-                console.log(response.image_path);
-                  //window.location.reload();
-              },
-              error: function(response){                             
-                  var errors = response.responseJSON;
-                  for (var key in errors) {
-                    
-                  }
-                  //$('#btnLoading').hide();
-                  //$('#btnSave').show();
-              }
-            });
-          }
-        });
-      $('#title_vi').change(function(){
-         var name = $.trim( $(this).val() );
-         if( name != '' && $('#slug_vi').val() == ''){
-            $.ajax({
-              url: $('#route_get_slug').val(),
-              type: "POST",
-              async: false,      
-              data: {
-                str : name
-              },              
-              success: function (response) {
-                if( response.str ){                  
-                  $('#slug_vi').val( response.str );
-                }                
-              },
-              error: function(response){                             
-                  var errors = response.responseJSON;
-                  for (var key in errors) {
-                    
-                  }
-                  //$('#btnLoading').hide();
-                  //$('#btnSave').show();
-              }
-            });
-         }
-      });
-      $('#title_en').change(function(){
-         var name = $.trim( $(this).val() );
-         if( name != '' && $('#slug_en').val() == ''){
-            $.ajax({
-              url: $('#route_get_slug').val(),
-              type: "POST",
-              async: false,      
-              data: {
-                str : name
-              },              
-              success: function (response) {
-                if( response.str ){                  
-                  $('#slug_en').val( response.str );
-                }                
-              },
-              error: function(response){                             
-                  var errors = response.responseJSON;
-                  for (var key in errors) {
-                    
-                  }
-                  //$('#btnLoading').hide();
-                  //$('#btnSave').show();
-              }
-            });
-         }
-      });
+         
+       
 
     });
     

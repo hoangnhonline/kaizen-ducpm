@@ -131,7 +131,7 @@
                   <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active"><a href="#seoVi" aria-controls="seoVi" role="tab" data-toggle="tab">VN</a></li>
                     <li role="presentation"><a href="#seoEn" aria-controls="seoEn" role="tab" data-toggle="tab">EN</a></li>  
-                    <li role="presentation"><a href="#seoEn" aria-controls="seoCn" role="tab" data-toggle="tab">CN</a></li>                    
+                    <!-- <li role="presentation"><a href="#seoEn" aria-controls="seoCn" role="tab" data-toggle="tab">CN</a></li>      -->               
                   </ul>
 
                   <!-- Tab panes -->
@@ -166,12 +166,12 @@
                             <textarea class="form-control" rows="4" name="custom_text_en" id="custom_text_en">{{ old('custom_text_en') }}</textarea>
                           </div>
                     </div><!--end thong tin co ban--> 
-                    <div role="tabpanel" class="tab-pane" id="seoCn">                        
+                    <!-- <div role="tabpanel" class="tab-pane" id="seoCn">                        
                         <div class="form-group">
                             <label>Meta title </label>
                             <input type="text" class="form-control" name="meta_title_cn" id="meta_title_cn" value="{{ old('meta_title_cn') }}">
                           </div>
-                          <!-- textarea -->
+                      
                           <div class="form-group">
                             <label>Meta desciption</label>
                             <textarea class="form-control" rows="4" name="meta_description_cn" id="meta_description_cn">{{ old('meta_description_cn') }}</textarea>
@@ -180,7 +180,7 @@
                             <label>Custom text</label>
                             <textarea class="form-control" rows="4" name="custom_text_cn" id="custom_text_cn">{{ old('custom_text_cn') }}</textarea>
                           </div>
-                    </div><!--end thong tin co ban--> 
+                    </div> --><!--end thong tin co ban--> 
                    
                   </div>
 

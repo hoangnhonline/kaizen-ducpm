@@ -62,7 +62,7 @@
           <li {{ in_array(\Request::route()->getName(), ['articles.create']) ? "class=active" : "" }}><a href="{{ route('articles.create') }}"><i class="fa fa-circle-o"></i> Thêm tin tức</a></li>          
         </ul>
       </li>
-      <li class="treeview {{ in_array(\Request::route()->getName(), ['pages.index', 'pages.create', 'pages.edit']) ? 'active' : '' }}">
+    <!--   <li class="treeview {{ in_array(\Request::route()->getName(), ['pages.index', 'pages.create', 'pages.edit']) ? 'active' : '' }}">
         <a href="#">
           <i class="fa fa-twitch"></i> 
           <span>Trang</span>
@@ -74,8 +74,14 @@
           <li {{ in_array(\Request::route()->getName(), ['pages.index', 'pages.edit']) ? "class=active" : "" }}><a href="{{ route('pages.index') }}"><i class="fa fa-circle-o"></i> Trang</a></li>
           <li {{ in_array(\Request::route()->getName(), ['pages.create']) ? "class=active" : "" }}><a href="{{ route('pages.create') }}"><i class="fa fa-circle-o"></i> Thêm trang</a></li>          
         </ul>
+      </li>  -->
+   
+      <li {{ in_array(\Request::route()->getName(), ['pages.edit']) ? "class=active" : "" }}>
+        <a href="{{ route('pages.edit', 1) }}">
+          <i class="fa fa-pencil-square-o"></i> 
+          <span>Giới thiệu</span>          
+        </a>       
       </li> 
-      
       <li {{ in_array(\Request::route()->getName(), ['contact.edit', 'contact.index']) ? "class=active" : "" }}>
         <a href="{{ route('contact.index') }}">
           <i class="fa fa-pencil-square-o"></i> 
