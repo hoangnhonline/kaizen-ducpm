@@ -1,5 +1,6 @@
 <?php
 // Authentication routes...
+Route::get('/login', ['as' => 'backend.login-form-2', 'uses' => 'Backend\UserController@loginForm']);
 Route::get('backend/login', ['as' => 'backend.login-form', 'uses' => 'Backend\UserController@loginForm']);
 Route::post('backend/login', ['as' => 'backend.check-login', 'uses' => 'Backend\UserController@checkLogin']);
 Route::get('backend/logout', ['as' => 'backend.logout', 'uses' => 'Backend\UserController@logout']);
