@@ -41,6 +41,7 @@ class Pages extends Model  {
         'content_cn',      
         'status',
         'meta_id',
+        'image_url',
         'created_user',
         'updated_user'
         ];

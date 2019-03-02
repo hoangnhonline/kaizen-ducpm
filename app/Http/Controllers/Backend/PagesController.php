@@ -81,7 +81,7 @@ class PagesController extends Controller
         $dataArr['updated_user'] = Auth::user()->id;
         $rs = Pages::create($dataArr);
         $id = $rs->id;       
-
+        dd($dataArr);
         $this->storeMeta( $id, 0, $dataArr);
 
         Session::flash('message', 'Tạo mới pages thành công');

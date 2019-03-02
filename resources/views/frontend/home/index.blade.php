@@ -36,25 +36,23 @@
 <!-- /.block-mainvisual -->
 <section class="block block-about">
     <div class="container">
-        <h2 class="block-title block-title-style1">ABOUT US</h2>
+        <h2 class="block-title block-title-style1">{!! $textArr['ve-chung-toi']->$text_key !!}</h2>
         <div class="block-content">
             <div class="row">
                 <div class="col-sm-5 col-xs-12 block-txt">
                     <div class="box-table">
                         <div class="box-td">
-                            <p class="txt">Hi there!</p>
-                            <p class="des">Bắt đầu kinh doanh đầu tiên vào năm 2015, Mia Apartment đã tự xác định là một loạt các dịch vụ căn hộ cao cấp. Nằm ở
-                            thành phố Hồ Chí Minh, chúng tôi dành để cung cấp cho khách hàng của mình chỗ ở tuyệt vời và sự thay đổi để tham gia vào
-                            các hoạt động của thành phố. Cơ sở vật chất hiện đại và dịch vụ khách hàng xuất sắc là những cam kết của chúng tôi để
-                            mang đến bài viết. Bắt đầu kinh doanh đầu tiên vào năm 2015, Mia Apartment đã tự xác định là một loạt các dịch vụ căn hộ cao cấp. Nằm ở
-                            thành phố Hồ Chí Minh, chúng tôi dành để cung cấp cho khách hàng của mình chỗ ở tuyệt vời và sự thay đổi để tham gia vào
-                            các hoạt động của thành phố. Cơ sở vật chất hiện đại và dịch vụ khách hàng xuất sắc là những cam kết của chúng tôi để
-                            mang đến bài viết.</p>
+                            @php                         
+                            $aboutNameKey = 'title_'.$lang;
+                            $aboutContentKey = 'content_'.$lang;
+                            @endphp
+                            <p class="txt">{!! $about->$aboutNameKey!!}</p>
+                            <p class="des">{!! $about->$aboutContentKey !!}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-7 col-xs-12 block-img">
-                    <img src="{{ URL::asset('public/assets/images/Picture2.jpg') }}" alt="">
+                    <img src="{{ Helper::showImage($about->image_url) }}" alt="{!! $textArr['ve-chung-toi']->$text_key !!}">
                 </div>
             </div>
         </div>

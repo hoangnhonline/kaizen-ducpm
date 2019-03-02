@@ -66,6 +66,7 @@
                             <input type="file" id="file-image" style="display:none" />
                          
                             <button class="btn btn-default" id="btnUploadImage" type="button"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Upload</button>
+                            <input type="hidden" name="image_url" id="image_url" value="{{ old('image_url') }}"/> 
                           </div>
                           <div style="clear:both"></div>
                         </div>
@@ -192,8 +193,7 @@
       </div>
       <!--/.col (left) -->      
     </div>
-    <input type="hidden" name="image_url" id="image_url" value="{{ old('image_url') }}"/>          
-    <input type="hidden" name="image_name" id="image_name" value="{{ old('image_name') }}"/>
+    
     </form>
     <!-- /.row -->
   </section>

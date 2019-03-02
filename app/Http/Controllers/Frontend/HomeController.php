@@ -5,16 +5,14 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\LoaiSp;
 use App\Models\Cate;
 use App\Models\Product;
 use App\Models\ProductImg;
 use App\Models\Articles;
 use App\Models\ArticlesCate;
-use App\Models\Customer;
 use App\Models\Newsletter;
 use App\Models\Settings;
-use App\Models\Album;
+use App\Models\Pages;
 use App\Models\Banner;
 
 use App\Models\CustomerNotification;
@@ -58,6 +56,7 @@ class HomeController extends Controller
         foreach($bannerList as $banner){
             $bannerArr[$banner->object_id][] = $banner;
         }        
+        $about = Pages::find(1);
         return view('frontend.home.index', compact( 'socialImage', 'seo', 'articlesList', 
                 'text_key',
                 'slug_key',
@@ -66,7 +65,8 @@ class HomeController extends Controller
                 'content_key',
                 'lang', 
                 'productList',
-                'bannerArr'));
+                'bannerArr',
+                'about'));
     }
 
     

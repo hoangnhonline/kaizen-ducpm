@@ -94,6 +94,7 @@
           <span>Banner</span>          
         </a>       
       </li> 
+
       <li class="treeview {{ in_array(\Request::route()->getName(), ['banner.index', 'banner.create', 'banner.edit', 'settings.index', 'info-seo.index', 'color.index', 'banner.list']) ? 'active' : '' }}">
         <a href="#">
           <i class="fa  fa-gears"></i>
@@ -103,7 +104,9 @@
           </span>
         </a>
         <ul class="treeview-menu">
+
           <li {{ \Request::route()->getName() == "settings.index" ? "class=active" : "" }}><a href="{{ route('settings.index') }}"><i class="fa fa-circle-o"></i> Thông tin CTY</a></li>
+          <li {{ \Request::route()->getName() == "text.index" ? "class=active" : "" }}><a href="{{ route('text.index') }}"><i class="fa fa-circle-o"></i> Text</a></li>
         </ul>
       </li>
       <!--<li class="header">LABELS</li>

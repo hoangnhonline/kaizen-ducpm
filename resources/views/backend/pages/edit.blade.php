@@ -69,7 +69,7 @@
                             <input type="file" id="file-image" style="display:none" />
                          
                             <button class="btn btn-default btnSingleUpload" data-set="image_url" data-image="thumbnail_image" type="button"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Upload</button>
-                            <input type="hidden" name="image_url" value="{{ old('image_url', $detail->image_url ) }}">
+                            <input type="hidden" name="image_url" value="{{ old('image_url', $detail->image_url ) }}" id="image_url">
                           </div>
                           <div style="clear:both"></div>
                         </div>
