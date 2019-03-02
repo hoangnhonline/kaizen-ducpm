@@ -16,7 +16,7 @@
             @if($banner->ads_url !='')
             </a>
             @endif
-            <div class="figcaption">
+            <!-- <div class="figcaption">
                 <div class="box-table">
                     <div class="box-td">
                         <div class="box-des">
@@ -25,7 +25,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </li>
         @endforeach
     </ul>
@@ -61,16 +61,18 @@
 <!-- /.block-about -->
 <section class="block block-why-us">
     <div class="container">
-        <h2 class="block-title block-title-style1">WHY CHOOSE US?</h2>
+        <h2 class="block-title block-title-style1">{!! $textArr['tai-sao-chon']->$text_key !!}</h2>
         <div class="block-sub-title text-center">
-            <p>We are one of the leading auto repair shops serving customers in Tucson.<br>All mechanic services are performed by highly qualified mechanics.</p>
+            <p>{!! $textArr['tucson']->$text_key !!}<br>
+                {!! $textArr['mechanics']->$text_key !!}
+            </p>
         </div>
         <div class="block-content row">
             <div class="col-sm-4 col-xs-12">
                 <div class="why-us-item">
                     <div class="hexagon"><div class="sl-small-user-chat"></div></div>
-                    <h4 class="why-us-item-title">PROFESSIONAL STANDARDS</h4>
-                    <p class="why-us-item-des">If you want the quality you would expect from the dealership, but with a more personal and friendly atmosphere, you have found it.</p>
+                    <h4 class="why-us-item-title">{!! $textArr['pro']->$text_key !!}</h4>
+                    <p class="why-us-item-des">{!! $textArr['found-it']->$text_key !!}</p>
                 </div>
             </div>
             <div class="col-sm-4 col-xs-12">
@@ -78,8 +80,8 @@
                     <div class="hexagon">
                         <div class="sl-small-wrench-screwdriver"></div>
                     </div>
-                    <h4 class="why-us-item-title">BEST MATERIALS</h4>
-                    <p class="why-us-item-des">We have invested in all the latest specialist tools and diagnostic software that is specifically tailored for the software in your vehicle.</p>
+                    <h4 class="why-us-item-title">{!! $textArr['best']->$text_key !!}</h4>
+                    <p class="why-us-item-des">{!! $textArr['vehicle']->$text_key !!}</p>
                 </div>
             </div>
             <div class="col-sm-4 col-xs-12">
@@ -87,8 +89,8 @@
                     <div class="hexagon">
                         <div class="sl-small-truck-tow"></div>
                     </div>
-                    <h4 class="why-us-item-title">VALUE US</h4>
-                    <p class="why-us-item-des">Our auto repair shop is capable of servicing a variety of models. We only do the work that is needed to fix your problem.</p>
+                    <h4 class="why-us-item-title">{!! $textArr['value']->$text_key !!}</h4>
+                    <p class="why-us-item-des">{!! $textArr['problem']->$text_key !!}</p>
                 </div>
             </div>
         </div>
@@ -176,7 +178,7 @@
 <!-- /.block-cunstomer-reviews -->
 <section class="block block-partner">
     <div class="container">
-        <h2 class="block-title block-title-style1">OUR PARTNER</h2>
+        <h2 class="block-title block-title-style1">{!! $textArr['partner']->$text_key !!}</h2>
         <ul class="owl-carousel owl-theme owl-style2" data-nav="false" data-dots="true" data-loop="true" data-autoplay="true" data-margin="30" data-responsive='{"0":{"items":3},"480":{"items":3},"600":{"items":3},"768":{"items":4},"800":{"items":5},"992":{"items":6}}'>
             <li class="item" data-dot="1"><img src="{{ URL::asset('public/assets/images/partner/partner1.png') }}" alt=""></li>
             <li class="item" data-dot="2"><img src="{{ URL::asset('public/assets/images/partner/partner2.png') }}" alt=""></li>
@@ -194,4 +196,4 @@
     </div>
 </section>
 <!-- /.block-partner -->
-@endsection
+@stop

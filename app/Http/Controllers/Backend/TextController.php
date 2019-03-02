@@ -29,7 +29,7 @@ class TextController extends Controller
         if( $title != ''){
             $query->where('alias', 'LIKE', '%'.$title.'%');
         }
-        $items = $query->orderBy('id', 'desc')->paginate(20);
+        $items = $query->orderBy('id', 'asc')->paginate(20);
         
         return view('backend.text.index', compact( 'items', 'title', 'lang_id' ));
     }

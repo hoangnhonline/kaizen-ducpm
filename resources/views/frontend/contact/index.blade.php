@@ -23,8 +23,8 @@
 <div class="block-get-in-touch">
     <div class="container">
         <div class="block-title">
-            <h2 class="title">Get In Touch</h2>
-            <p class="description">Let us know if you want to book the room or if you need any help</p>
+            <h2 class="title">{!! $textArr['touch']->$text_key !!}</h2>
+            <p class="description">{!! $textArr['help']->$text_key !!}</p>
         </div>
         <div class="block-form">
             <div class="row">
@@ -36,7 +36,7 @@
                 @if (count($errors) > 0)                        
                   <div class="alert alert-danger ">
                     <ul>                           
-                        <li>Vui lòng nhập đầy đủ thông tin.</li>                            
+                        <li>{!! $textArr['fill']->$text_key !!}</li>                            
                     </ul>
                   </div>                        
                 @endif
@@ -51,13 +51,13 @@
                     <div class="clearfix">
                         <p class="img"><img src="{{ URL::asset('public/assets/images/mail.svg') }}" alt=""></p>
                         <p class="title">
-                            <span class="name">Contact us by Email</span>
-                            <span class="value">KAIZENCVN@GMAIL.COM</span>
+                            <span class="name">{!! $textArr['cemail']->$text_key !!}</span>
+                            <span class="value">{!! $settingArr['email'] !!}</span>
                         </p>
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <input type="input" name="fullname" id="fullname" value="{{ old('fullname') }}" class="form-control" placeholder="Name">
+                    <input type="input" name="fullname" id="fullname" value="{{ old('fullname') }}" class="form-control" placeholder="{!! $textArr['name']->$text_key !!}">
                 </div>
             </div>
             <div class="row block-form-sec">
@@ -65,8 +65,8 @@
                     <div class="clearfix">
                         <p class="img"><img src="{{ URL::asset('public/assets/images/phone.svg') }}" alt=""></p>
                         <p class="title">
-                            <span class="name">Contact us by Phone</span>
-                            <span class="value">(+84) 123 456 789</span>
+                            <span class="name">{!! $textArr['cphone']->$text_key !!}</span>
+                            <span class="value">{!! $settingArr['phone'] !!}</span>
                         </p>
                     </div>
                 </div>
@@ -79,21 +79,21 @@
                     <div class="clearfix">
                         <p class="img"><img src="{{ URL::asset('public/assets/images/place.svg') }}" alt=""></p>
                         <p class="title">
-                            <span class="name">Address</span>
-                            <span class="value">29/6A Tran Thai Tong, Ward.15, Tan Binh Dist, HCMC, Vietnam</span>
+                            <span class="name">{!! $textArr['dia-chi']->$text_key !!}</span>
+                            <span class="value">{!! $textArr['dia-chi-cty']->$text_key !!}</span>
                         </p>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <textarea name="content" id="content" class="form-control" rows="5" style="max-width: 100%;"
-                        placeholder="Message">{{ old('content') }}</textarea>
+                        placeholder="{!! $textArr['message']->$text_key !!}">{{ old('content') }}</textarea>
                 </div>
             </div>
             <div class="row block-form-sec">
                 <div class="col-sm-4">
                 </div>
                 <div class="col-sm-6">
-                    <button type="submit" class="btn btn-primary">Send</button>
+                    <button type="submit" class="btn btn-primary">{!! $textArr['gui']->$text_key !!}</button>
                 </div>
             </div>
           </form>

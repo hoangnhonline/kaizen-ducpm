@@ -4,7 +4,7 @@
               <div class="block-language">
                   <ul>
                       <li>
-                          <span>Language</span>
+                          <span>{!! $textArr['ngon-ngu']->$text_key !!}</span>
                           <span>:</span>
                       </li>
                       <li>
@@ -57,7 +57,7 @@
                       <li class="search">
                           <span><i class="fa fa-search"></i></span>
                           <form method="GET" action="{{ route('search') }}" autocomplete="on">
-                              <input id="search" name="search" type="text" value="{{ isset($tu_khoa) ? $tu_khoa : trans('text.nhap-ten-san-pham') }}" placeholder="What're we looking for ?">
+                              <input id="search" name="search" type="text" value="{{ isset($tu_khoa) ? $tu_khoa : "" }}" placeholder="{!! $textArr['nhap-tu-khoa']->$text_key !!}">
                               <button value="Submit" type="submit">
                                   <i class="fa fa-search"></i>
                               </button>
