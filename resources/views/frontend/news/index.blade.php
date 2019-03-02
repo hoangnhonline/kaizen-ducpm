@@ -47,10 +47,10 @@
                 @endforeach					
             </ul>
         </div>
-        <div class="block-loadmore">
+        <!-- <div class="block-loadmore">
             <a href="Load more" title="Load more">Load more</a>
             <p><img src="{{ URL::asset('public/assets/images/shape.svg') }}" alt="shape"></p>
-        </div>
+        </div> -->
     </div>
 </div>
 @endsection
