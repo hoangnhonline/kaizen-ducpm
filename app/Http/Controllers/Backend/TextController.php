@@ -41,8 +41,6 @@ class TextController extends Controller
     */
     public function create(Request $request)
     {
-
-
         return view('backend.text.create');
     }
     public function ajaxTag(Request $request){

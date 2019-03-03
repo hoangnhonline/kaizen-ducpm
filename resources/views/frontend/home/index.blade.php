@@ -97,84 +97,28 @@
     </div>
 </section>
 <!-- block-why-us -->
+@if($commentList->count() > 0)
 <div class="block block-cunstomer-reviews">
     <div class="container">
         <div class="block-content">
             <ul class="owl-carousel" data-nav="true" data-dots="false" data-margin="0" data-items='1' data-autoplayTimeout="700" data-autoplay="false" data-loop="true">
+                @foreach($commentList as $comment)
                 <li class="item">
                     <div class="hexagon small">
                         <div class="sl-small-pen"></div>
                     </div>
-                    <p class="cunstomer-reviews-title">"I have taken several of the family cars here for the past several years and without exception the experiences have been outstanding. I would highly recommend this place to any one who wants great service, honest value, and really great people."
+                    <p class="cunstomer-reviews-title">"{!! $comment->$content_key!!}"
                     </p>
                     <div class="cunstomer-reviews-author">
-                        <h6>ROBERT SMITH</h6>
+                        <h6>{!! $comment->name !!}</h6>
                     </div>
                 </li>
-                <li class="item">
-                    <div class="hexagon small">
-                        <div class="sl-small-pen"></div>
-                    </div>
-                    <p class="cunstomer-reviews-title">"I have taken several of the family cars here for the past several years and
-                        without exception the experiences have been outstanding. I would highly recommend this place to any one who
-                        wants great service, honest value, and really great people."
-                    </p>
-                    <div class="cunstomer-reviews-author">
-                        <h6>ROBERT SMITH</h6>
-                    </div>
-                </li>
-                <li class="item">
-                    <div class="hexagon small">
-                        <div class="sl-small-pen"></div>
-                    </div>
-                    <p class="cunstomer-reviews-title">"I have taken several of the family cars here for the past several years and
-                        without exception the experiences have been outstanding. I would highly recommend this place to any one who
-                        wants great service, honest value, and really great people."
-                    </p>
-                    <div class="cunstomer-reviews-author">
-                        <h6>ROBERT SMITH</h6>
-                    </div>
-                </li>
-                <li class="item">
-                    <div class="hexagon small">
-                        <div class="sl-small-pen"></div>
-                    </div>
-                    <p class="cunstomer-reviews-title">"I have taken several of the family cars here for the past several years and
-                        without exception the experiences have been outstanding. I would highly recommend this place to any one who
-                        wants great service, honest value, and really great people."
-                    </p>
-                    <div class="cunstomer-reviews-author">
-                        <h6>ROBERT SMITH</h6>
-                    </div>
-                </li>
-                <li class="item">
-                    <div class="hexagon small">
-                        <div class="sl-small-pen"></div>
-                    </div>
-                    <p class="cunstomer-reviews-title">"I have taken several of the family cars here for the past several years and
-                        without exception the experiences have been outstanding. I would highly recommend this place to any one who
-                        wants great service, honest value, and really great people."
-                    </p>
-                    <div class="cunstomer-reviews-author">
-                        <h6>ROBERT SMITH</h6>
-                    </div>
-                </li>
-                <li class="item">
-                    <div class="hexagon small">
-                        <div class="sl-small-pen"></div>
-                    </div>
-                    <p class="cunstomer-reviews-title">"I have taken several of the family cars here for the past several years and
-                        without exception the experiences have been outstanding. I would highly recommend this place to any one who
-                        wants great service, honest value, and really great people."
-                    </p>
-                    <div class="cunstomer-reviews-author">
-                        <h6>ROBERT SMITH</h6>
-                    </div>
-                </li>
+               @endforeach
             </ul>
         </div>
     </div>
 </div>
+@endif
 <!-- /.block-cunstomer-reviews -->
 <section class="block block-partner">
     <div class="container">
