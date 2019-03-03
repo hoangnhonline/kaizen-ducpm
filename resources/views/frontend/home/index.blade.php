@@ -120,24 +120,19 @@
 </div>
 @endif
 <!-- /.block-cunstomer-reviews -->
+@if($partnerList->count() > 0)
 <section class="block block-partner">
     <div class="container">
         <h2 class="block-title block-title-style1">{!! $textArr['partner']->$text_key !!}</h2>
         <ul class="owl-carousel owl-theme owl-style2" data-nav="false" data-dots="true" data-loop="true" data-autoplay="true" data-margin="30" data-responsive='{"0":{"items":3},"480":{"items":3},"600":{"items":3},"768":{"items":4},"800":{"items":5},"992":{"items":6}}'>
-            <li class="item" data-dot="1"><img src="{{ URL::asset('public/assets/images/partner/partner1.png') }}" alt=""></li>
-            <li class="item" data-dot="2"><img src="{{ URL::asset('public/assets/images/partner/partner2.png') }}" alt=""></li>
-            <li class="item" data-dot="3"><img src="{{ URL::asset('public/assets/images/partner/partner3.png') }}" alt=""></li>
-            <li class="item" data-dot="4"><img src="{{ URL::asset('public/assets/images/partner/partner4.png') }}" alt=""></li>
-            <li class="item" data-dot="5"><img src="{{ URL::asset('public/assets/images/partner/partner5.png') }}" alt=""></li>
-            <li class="item" data-dot="6"><img src="{{ URL::asset('public/assets/images/partner/partner6.png') }}" alt=""></li>
-            <li class="item" data-dot="7"><img src="{{ URL::asset('public/assets/images/partner/partner1.png') }}" alt=""></li>
-            <li class="item" data-dot="8"><img src="{{ URL::asset('public/assets/images/partner/partner2.png') }}" alt=""></li>
-            <li class="item" data-dot="9"><img src="{{ URL::asset('public/assets/images/partner/partner3.png') }}" alt=""></li>
-            <li class="item" data-dot="10"><img src="{{ URL::asset('public/assets/images/partner/partner4.png') }}" alt=""></li>
-            <li class="item" data-dot="11"><img src="{{ URL::asset('public/assets/images/partner/partner5.png') }}" alt=""></li>
-            <li class="item" data-dot="12"><img src="{{ URL::asset('public/assets/images/partner/partner6.png') }}" alt=""></li>
+            @php $iComment = 0; @endphp
+            @foreach($partnerList as $partner)
+            @php $iComment++; @endphp
+            <li class="item" data-dot="{{ $iComment }}"><img src="{{ Helper::showImage($partner->image_url) }}" alt="{!! $partner->name !!}"></li>
+            @endforeach           
         </ul>
     </div>
 </section>
 <!-- /.block-partner -->
+@endif
 @stop

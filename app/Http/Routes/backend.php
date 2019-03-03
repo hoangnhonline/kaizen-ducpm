@@ -11,7 +11,14 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'middleware' => '
         Route::get('/', ['as' => 'settings.index', 'uses' => 'SettingsController@index']);
         Route::post('/update', ['as' => 'settings.update', 'uses' => 'SettingsController@update']);
     });
-  
+     Route::group(['prefix' => 'partner'], function () {
+        Route::get('/', ['as' => 'partner.index', 'uses' => 'PartnerController@index']);
+        Route::get('/create', ['as' => 'partner.create', 'uses' => 'PartnerController@create']);
+        Route::post('/store', ['as' => 'partner.store', 'uses' => 'PartnerController@store']);
+        Route::get('{id}/edit',   ['as' => 'partner.edit', 'uses' => 'PartnerController@edit']);
+        Route::post('/update', ['as' => 'partner.update', 'uses' => 'PartnerController@update']);
+        Route::get('{id}/destroy', ['as' => 'partner.destroy', 'uses' => 'PartnerController@destroy']);
+    });
     Route::group(['prefix' => 'pages'], function () {
         Route::get('/', ['as' => 'pages.index', 'uses' => 'PagesController@index']);
         Route::get('/create', ['as' => 'pages.create', 'uses' => 'PagesController@create']);

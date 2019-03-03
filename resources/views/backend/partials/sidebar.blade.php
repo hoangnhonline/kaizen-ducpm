@@ -82,6 +82,18 @@
           <span>Giới thiệu</span>          
         </a>       
       </li> 
+      <li {{ in_array(\Request::route()->getName(), ['comment.index', 'comment.create', 'comment.edit', ]) ? "class=active" : "" }}>
+        <a href="{{ route('comment.index') }}">
+          <i class="fa fa-pencil-square-o"></i> 
+          <span>Khách hàng đánh giá</span>          
+        </a>       
+      </li> 
+      <li {{ in_array(\Request::route()->getName(), ['partner.index', 'partner.create', 'partner.edit', ]) ? "class=active" : "" }}>
+        <a href="{{ route('partner.index') }}">
+          <i class="fa fa-pencil-square-o"></i> 
+          <span>Đối tác</span>          
+        </a>       
+      </li> 
       <li {{ in_array(\Request::route()->getName(), ['contact.edit', 'contact.index']) ? "class=active" : "" }}>
         <a href="{{ route('contact.index') }}">
           <i class="fa fa-pencil-square-o"></i> 

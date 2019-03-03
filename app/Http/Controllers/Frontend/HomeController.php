@@ -57,6 +57,7 @@ class HomeController extends Controller
         }        
         $about = Pages::find(1);
         $commentList = Comment::where('status', 1)->orderBy('display_order')->get();
+        $partnerList = Partner::where('status', 1)->orderBy('display_order')->get();
         return view('frontend.home.index', compact( 'socialImage', 'seo', 'articlesList', 
                 'text_key',
                 'slug_key',
@@ -67,7 +68,8 @@ class HomeController extends Controller
                 'productList',
                 'bannerArr',
                 'about',
-                'commentList'));
+                'commentList',
+                'partnerList'));
     }
 
     

@@ -75,14 +75,14 @@
               <tr id="row-{{ $item->id }}">
                 <td><span class="order">{{ $i }}</span></td>                       
                 <td>                  
-                  @if($item->full_name != '')
-                  {{ $item->full_name }}</br>
+                  @if($item->fullname != '')
+                  {{ $item->fullname }}</br>
                   @endif
                   @if($item->email != '')
-                  <a href="{{ route( 'contact.edit', [ 'id' => $item->id ]) }}">{{ $item->email }}</a> -
+                  <a href="{{ route( 'contact.edit', [ 'id' => $item->id ]) }}">{{ $item->email }}</a>
                   @endif
                   @if($item->phone != '')
-                  {{ $item->phone }}</br>
+                   - {{ $item->phone }}</br>
                   @endif
                 </td>
                 <td>

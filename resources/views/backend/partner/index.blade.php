@@ -4,11 +4,11 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Khách hàng đánh giá 
+    Đối tác
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="{{ route( 'comment.index' ) }}">Khách hàng đánh giá</a></li>
+    <li><a href="{{ route( 'partner.index' ) }}">Đối tác</a></li>
     <li class="active">Danh sách</li>
   </ol>
 </section>
@@ -20,7 +20,7 @@
       @if(Session::has('message'))
       <p class="alert alert-info" >{{ Session::get('message') }}</p>
       @endif
-      <a href="{{ route('comment.create') }}" class="btn btn-info" style="margin-bottom:5px">Tạo mới</a>
+      <a href="{{ route('partner.create') }}" class="btn btn-info" style="margin-bottom:5px">Tạo mới</a>
       <div class="box">
 
         <div class="box-header with-border">
@@ -33,8 +33,8 @@
             <tr>
               <th style="width: 1%">#</th>              
               <th width="150">Tên</th>
-              <th style="white-space: nowrap;">Thứ tự</th>
-              <th>Nội dung</th>             
+              <th style="white-space: nowrap;width: 1%">Thứ tự</th>
+              <th>Logo</th>             
               <th width="1%;white-space:nowrap">Thao tác</th>
             </tr>
             <tbody>
@@ -45,19 +45,19 @@
               <tr id="row-{{ $item->id }}">
                   <td><span class="order">{{ $i }}</span></td>                
                   <td>                  
-                    <a href="{{ route( 'comment.edit', [ 'id' => $item->id ]) }}">{{ $item->name }}</a>     
+                    <a href="{{ route( 'partner.edit', [ 'id' => $item->id ]) }}">{{ $item->name }}</a>     
                   </td>
                   <td style="text-align: center;">
                     {!! $item->display_order !!}
                   </td>
                   <td>
-                    {!! $item->content_vi !!}
+                    <img src="{{ Helper::showImage($item->image_url) }}">
                   </td>   
                  
                   
                   <td style="white-space:nowrap; text-align:right">               
-                    <a href="{{ route( 'comment.edit', [ 'id' => $item->id ]) }}" class="btn-sm btn btn-warning">Chỉnh sửa</a>
-                   <a onclick="return callDelete('{{ $item->title_vi }}','{{ route( 'comment.destroy', [ 'id' => $item->id ]) }}');" class="btn-sm btn btn-danger">Xóa</a>
+                    <a href="{{ route( 'partner.edit', [ 'id' => $item->id ]) }}" class="btn-sm btn btn-warning">Chỉnh sửa</a>
+                   <a onclick="return callDelete('{{ $item->title_vi }}','{{ route( 'partner.destroy', [ 'id' => $item->id ]) }}');" class="btn-sm btn btn-danger">Xóa</a>
                   </td>
                 </tr> 
               @endforeach
