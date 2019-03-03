@@ -22,6 +22,9 @@
       <!-- left column -->
 
       <div class="col-md-8">
+        @if(Session::has('message'))
+      <p class="alert alert-info" >{{ Session::get('message') }}</p>
+      @endif
         <!-- general form elements -->
         <div class="box box-primary">
           <div class="box-header with-border">
@@ -140,48 +143,34 @@
                     <div role="tabpanel" class="tab-pane active" id="seoVi">
                          <div class="form-group">
                             <label>Thẻ title </label>
-                            <input type="text" class="form-control" name="meta_title_vi" id="meta_title_vi" value="{{ old('meta_title_vi', $meta->title_vi) }}">
+                            <input type="text" class="form-control" name="meta_title_vi" id="meta_title_vi" value="{{ old('meta_title_vi', isset($meta->title_vi) ? $meta->title_vi : "") }}">
                           </div>
                           <!-- textarea -->
                           <div class="form-group">
                             <label>Thẻ desciption</label>
-                            <textarea class="form-control" rows="4" name="meta_description_vi" id="meta_description_vi">{{ old('meta_description_vi', $meta->description_vi) }}</textarea>
+                            <textarea class="form-control" rows="4" name="meta_description_vi" id="meta_description_vi">{{ old('meta_description_vi', isset($meta->description_vi) ? $meta->title_vi : "") }}</textarea>
                           </div>  
                           <div class="form-group">
                             <label>Nội dung tùy chỉnh</label>
-                            <textarea class="form-control" rows="4" name="custom_text_vi" id="custom_text_vi">{{ old('custom_text_vi', $meta->custom_text_vi) }}</textarea>
+                            <textarea class="form-control" rows="4" name="custom_text_vi" id="custom_text_vi">{{ old('custom_text_vi', isset($meta->custom_text_vi) ? $meta->title_vi : "") }}</textarea>
                           </div>
                     </div><!--end thong tin co ban--> 
                     <div role="tabpanel" class="tab-pane" id="seoEn">                        
                         <div class="form-group">
                             <label>Meta title </label>
-                            <input type="text" class="form-control" name="meta_title_en" id="meta_title_en" value="{{ old('meta_title_en', $meta->title_en) }}">
+                            <input type="text" class="form-control" name="meta_title_en" id="meta_title_en" value="{{ old('meta_title_en', isset($meta->title_en) ? $meta->title_en : "") }}">
                           </div>
                           <!-- textarea -->
                           <div class="form-group">
                             <label>Meta desciption</label>
-                            <textarea class="form-control" rows="4" name="meta_description_en" id="meta_description_en">{{ old('meta_description_en', $meta->description_en) }}</textarea>
+                            <textarea class="form-control" rows="4" name="meta_description_en" id="meta_description_en">{{ old('meta_description_en', isset($meta->description_en) ? $meta->description_en : "") }}</textarea>
                           </div> 
                           <div class="form-group">
                             <label>Custom text</label>
-                            <textarea class="form-control" rows="4" name="custom_text_en" id="custom_text_en">{{ old('custom_text_en', $meta->custom_text_en) }}</textarea>
+                            <textarea class="form-control" rows="4" name="custom_text_en" id="custom_text_en">{{ old('custom_text_en', isset($meta->custom_text_en) ? $meta->custom_text_en : "") }}</textarea>
                           </div>
                     </div><!--end thong tin co ban-->
-                    <!-- <div role="tabpanel" class="tab-pane" id="seoCn">                        
-                        <div class="form-group">
-                            <label>Meta title </label>
-                            <input type="text" class="form-control" name="meta_title_cn" id="meta_title_cn" value="{{ old('meta_title_cn', $meta->title_cn) }}">
-                          </div>
-                          
-                          <div class="form-group">
-                            <label>Meta desciption</label>
-                            <textarea class="form-control" rows="4" name="meta_description_cn" id="meta_description_cn">{{ old('meta_description_cn', $meta->description_cn) }}</textarea>
-                          </div> 
-                          <div class="form-group">
-                            <label>Custom text</label>
-                            <textarea class="form-control" rows="4" name="custom_text_cn" id="custom_text_cn">{{ old('custom_text_cn', $meta->custom_text_cn) }}</textarea>
-                          </div>
-                    </div> --><!--end thong tin co ban--> 
+                    
                    
                   </div>
 

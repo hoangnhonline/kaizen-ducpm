@@ -238,7 +238,6 @@ class ProductController extends Controller
         if ( $detail->meta_id > 0){
             $meta = MetaData::find( $detail->meta_id );
         }
-      
         return view('backend.product.edit', compact( 'detail','cateArr', 'meta'));
     }
     public function ajaxDetail(Request $request)
