@@ -14,6 +14,8 @@ use App\Models\Settings;
 use App\Models\Pages;
 use App\Models\Banner;
 use App\Models\Comment;
+use App\Models\Partner;
+
 use App\Models\CustomerNotification;
 use Helper, File, Session, Auth, Hash, App;
 
