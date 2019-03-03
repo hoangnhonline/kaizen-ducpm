@@ -10,11 +10,10 @@ use App\Models\Product;
 use App\Models\ProductImg;
 use App\Models\Articles;
 use App\Models\ArticlesCate;
-use App\Models\Newsletter;
 use App\Models\Settings;
 use App\Models\Pages;
 use App\Models\Banner;
-
+use App\Models\Comment;
 use App\Models\CustomerNotification;
 use Helper, File, Session, Auth, Hash, App;
 
@@ -57,6 +56,7 @@ class HomeController extends Controller
             $bannerArr[$banner->object_id][] = $banner;
         }        
         $about = Pages::find(1);
+        $commentList = Comment::where('status', 1)->orderBy('display_order')->get();
         return view('frontend.home.index', compact( 'socialImage', 'seo', 'articlesList', 
                 'text_key',
                 'slug_key',
@@ -66,7 +66,8 @@ class HomeController extends Controller
                 'lang', 
                 'productList',
                 'bannerArr',
-                'about'));
+                'about',
+                'commentList'));
     }
 
     

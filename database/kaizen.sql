@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 02, 2019 at 04:54 AM
+-- Generation Time: Mar 02, 2019 at 08:25 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.14
 
@@ -217,7 +217,7 @@ CREATE TABLE `counter_ips` (
 --
 
 INSERT INTO `counter_ips` (`ip`, `object_id`, `object_type`, `visit`) VALUES
-('127.0.0.1', 1, 3, 1551498861),
+('127.0.0.1', 1, 3, 1551511484),
 ('::1', 1, 3, 1538212942),
 ('171.249.208.92', 1, 3, 1540714657),
 ('113.185.14.53', 1, 3, 1540631384),
@@ -1464,7 +1464,7 @@ CREATE TABLE `counter_values` (
 --
 
 INSERT INTO `counter_values` (`id`, `object_id`, `object_type`, `day_id`, `day_value`, `all_value`) VALUES
-(1, 1, 3, 60, 6, 9404);
+(1, 1, 3, 60, 9, 9407);
 
 -- --------------------------------------------------------
 
@@ -1570,7 +1570,7 @@ INSERT INTO `meta_data` (`id`, `title_vi`, `title_en`, `description_vi`, `descri
 (25, 'PZA', 'PZA', '', '', 'PZA', '', '', '', '', 1, 1, '2018-10-16 09:52:30', '2018-10-16 09:52:30'),
 (26, 'SPA', 'SPA', '', '', 'SPA', '', '', '', '', 1, 1, '2018-10-16 09:52:55', '2018-10-16 09:52:55'),
 (27, 'PG', 'PG', '', '', 'PG', '', '', '', '', 1, 1, '2018-10-16 09:53:12', '2018-10-16 09:53:12'),
-(28, 'Giới thiệu công ty', 'About our company', '', '', '关于公司', '', '', '', '', 1, 1, '2018-10-16 12:06:33', '2018-10-16 12:07:54'),
+(28, 'Hi there!', 'Hi there!', '', '', '关于公司', '', '', '', '', 1, 1, '2018-10-16 12:06:33', '2019-03-02 11:06:19'),
 (29, 'Lĩnh vực hoạt động', 'Scope of work', '', '', '工作范围', '', '', '', '', 1, 1, '2018-10-16 12:09:03', '2018-10-16 12:09:22'),
 (30, '', '', '', '', NULL, NULL, '', '', NULL, 1, 1, '2019-03-02 10:07:33', '2019-03-02 10:07:33');
 
@@ -1626,8 +1626,7 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`id`, `title_vi`, `title_en`, `slug_vi`, `slug_en`, `alias_vi`, `alias_en`, `image_url`, `description_vi`, `description_en`, `content_vi`, `content_en`, `title_cn`, `slug_cn`, `alias_cn`, `description_cn`, `content_cn`, `status`, `meta_id`, `created_user`, `updated_user`, `created_at`, `updated_at`) VALUES
-(1, 'Giới thiệu công ty', 'About our company', 'gioi-thieu-cong-ty', 'about-our-company', '', '', '', '', '', 'L&agrave; một trong những c&ocirc;ng ty h&agrave;ng đầu Việt Nam chuy&ecirc;n cung cấp dịch vụ thưong mại kỹ thuật.C&ocirc;ng ty TNHH TM KT GIA GIA PH&Uacute; đ&atilde; ra đời v&agrave; hoạt động nhiều năm trong lĩnh vực mua b&aacute;n v&agrave; giới thiệu c&aacute;c sản phẩm nhập khẩu chuy&ecirc;n dụng như :<br />\r\n<br />\r\n&nbsp; + Độc quyền ống dầu thủy lực hiệu HPFLEX &reg;.GPFLEX &reg;.<br />\r\n<br />\r\n&nbsp; + Độc quyền khớp nối PU hiệu SUNCOS &reg;.<br />\r\n<br />\r\n&nbsp; + Độc quyền ống PU hiệu HPRESS ( MADE IN TAIWAN )<br />\r\n<br />\r\n&nbsp; + Khớp nối nhanh d&ugrave;ng cho ống thủy lực.<br />\r\n<br />\r\n&nbsp; + M&aacute;y b&oacute;p ống dầu YEONGLONG YL-20;YL-32.. ( MADE IN TAIWAN ).<br />\r\n<br />\r\n&nbsp; + C&aacute;c linh kiện dẫn kh&iacute; như EMC, MINDMAN ....<br />\r\n&nbsp;<br />\r\nVới quy tr&igrave;nh tr&ecirc;n ch&uacute;ng t&ocirc;i lu&ocirc;n đảm bảo chất lượng ho&agrave;n hảo nhất v&agrave; chủ động thời gian giao h&agrave;ng.', 'Content of company introduction', '关于公司', 'c-about-our-company', '', NULL, '本公司专提供和贸易独权各种产品如下：<br />\r\n<br />\r\n+ GPFLEX &reg; HPFLEX &reg; 液压油管.<br />\r\n<br />\r\n+ SUNCOS &reg; 快速接头.<br />\r\n<br />\r\n+ PU 管 MADE IN TAIWAN.<br />\r\n<br />\r\n+ 铁氟龙编织管.<br />\r\n<br />\r\n+ 液压油管快速接头.<br />\r\n<br />\r\n+ 中国扣压机 DX 68 DX69.<br />\r\n<br />\r\n+ 台湾扣压机 YEONGLONG YL-20 &nbsp;YL-32...<br />\r\n<br />\r\n+ 各种气压零件 E.M.C - MINDMAN...', 1, 28, 1, 1, '2016-12-23 00:00:00', '2018-10-16 12:07:37'),
-(2, 'Lĩnh vực hoạt động', 'Scope of work', 'linh-vuc-hoat-dong', 'scope-of-work', '', '', '', NULL, NULL, '<strong>Phương ch&acirc;m hoạt động :&nbsp;&nbsp;</strong><br />\r\n<br />\r\nVới phương ch&acirc;m hoạt động mang đến sự h&agrave;i l&ograve;ng cho kh&aacute;ch h&agrave;ng,khi đến với CTY GIA GIA PH&Uacute;. Qu&yacute; kh&aacute;ch sẽ được phục vụ bởi một đội ngũ chuy&ecirc;n nghiệp,nhiệt t&igrave;nh,s&aacute;ng tạo trong c&ocirc;ng việc,lu&ocirc;n nỗ lực mang đến cho kh&aacute;ch h&agrave;ng những sản phẩm :&nbsp;<br />\r\n<br />\r\n<strong>- Chất lượng đạt y&ecirc;u cầu.<br />\r\n- Gi&aacute; th&agrave;nh cạnh tranh.<br />\r\n- Giao h&agrave;ng đ&uacute;ng hẹn.</strong><br />\r\n&nbsp;<br />\r\nHo&agrave;i b&atilde;o của ch&uacute;ng t&ocirc;i l&agrave; đưa CTY GIA GIA PH&Uacute; trở th&agrave;nh nh&agrave; nhập khẩu v&agrave; cung cấp ống thủy lực h&agrave;ng đầu VIỆT NAM.', 'Content', '工作范围', 'c-scope-of-work', '', NULL, '经营方针：<br />\r\n<br />\r\n- 家家富贸易有限公司以诚信和热情的工作态度。<br />\r\n<br />\r\n- 带给客户满意的服务。<br />\r\n<br />\r\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; + 产品质量<br />\r\n<br />\r\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; + 价格竞争<br />\r\n<br />\r\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; + 准时送货<br />\r\n<br />\r\n- 本公司志向是成为越南最大的液压油管进口商之一。<br />\r\n<br />\r\n- 务求与客户共创造双赢。', 1, 29, 1, 1, '2018-10-16 12:09:03', '2018-10-16 12:10:44');
+(1, 'Hi there!', 'Hi there!', 'hi-there', 'hi-there', 'hi there', 'hi there', '/public/uploads/images/picture2-1551499880.jpg', '', '', 'Bắt đầu kinh doanh đầu ti&ecirc;n v&agrave;o năm 2015, Mia Apartment đ&atilde; tự x&aacute;c định l&agrave; một loạt c&aacute;c dịch vụ căn hộ cao cấp. Nằm ở th&agrave;nh phố Hồ Ch&iacute; Minh, ch&uacute;ng t&ocirc;i d&agrave;nh để cung cấp cho kh&aacute;ch h&agrave;ng của m&igrave;nh chỗ ở tuyệt vời v&agrave; sự thay đổi để tham gia v&agrave;o c&aacute;c hoạt động của th&agrave;nh phố. Cơ sở vật chất hiện đại v&agrave; dịch vụ kh&aacute;ch h&agrave;ng xuất sắc l&agrave; những cam kết của ch&uacute;ng t&ocirc;i để mang đến b&agrave;i viết. Bắt đầu kinh doanh đầu ti&ecirc;n v&agrave;o năm 2015, Mia Apartment đ&atilde; tự x&aacute;c định l&agrave; một loạt c&aacute;c dịch vụ căn hộ cao cấp. Nằm ở th&agrave;nh phố Hồ Ch&iacute; Minh, ch&uacute;ng t&ocirc;i d&agrave;nh để cung cấp cho kh&aacute;ch h&agrave;ng của m&igrave;nh chỗ ở tuyệt vời v&agrave; sự thay đổi để tham gia v&agrave;o c&aacute;c hoạt động của th&agrave;nh phố. Cơ sở vật chất hiện đại v&agrave; dịch vụ kh&aacute;ch h&agrave;ng xuất sắc l&agrave; những cam kết của ch&uacute;ng t&ocirc;i để mang đến b&agrave;i viết.', 'Bắt đầu kinh doanh đầu ti&ecirc;n v&agrave;o năm 2015, Mia Apartment đ&atilde; tự x&aacute;c định l&agrave; một loạt c&aacute;c dịch vụ căn hộ cao cấp. Nằm ở th&agrave;nh phố Hồ Ch&iacute; Minh, ch&uacute;ng t&ocirc;i d&agrave;nh để cung cấp cho kh&aacute;ch h&agrave;ng của m&igrave;nh chỗ ở tuyệt vời v&agrave; sự thay đổi để tham gia v&agrave;o c&aacute;c hoạt động của th&agrave;nh phố. Cơ sở vật chất hiện đại v&agrave; dịch vụ kh&aacute;ch h&agrave;ng xuất sắc l&agrave; những cam kết của ch&uacute;ng t&ocirc;i để mang đến b&agrave;i viết. Bắt đầu kinh doanh đầu ti&ecirc;n v&agrave;o năm 2015, Mia Apartment đ&atilde; tự x&aacute;c định l&agrave; một loạt c&aacute;c dịch vụ căn hộ cao cấp. Nằm ở th&agrave;nh phố Hồ Ch&iacute; Minh, ch&uacute;ng t&ocirc;i d&agrave;nh để cung cấp cho kh&aacute;ch h&agrave;ng của m&igrave;nh chỗ ở tuyệt vời v&agrave; sự thay đổi để tham gia v&agrave;o c&aacute;c hoạt động của th&agrave;nh phố. Cơ sở vật chất hiện đại v&agrave; dịch vụ kh&aacute;ch h&agrave;ng xuất sắc l&agrave; những cam kết của ch&uacute;ng t&ocirc;i để mang đến b&agrave;i viết.', '关于公司', 'c-about-our-company', '', NULL, '本公司专提供和贸易独权各种产品如下：<br />\r\n<br />\r\n+ GPFLEX &reg; HPFLEX &reg; 液压油管.<br />\r\n<br />\r\n+ SUNCOS &reg; 快速接头.<br />\r\n<br />\r\n+ PU 管 MADE IN TAIWAN.<br />\r\n<br />\r\n+ 铁氟龙编织管.<br />\r\n<br />\r\n+ 液压油管快速接头.<br />\r\n<br />\r\n+ 中国扣压机 DX 68 DX69.<br />\r\n<br />\r\n+ 台湾扣压机 YEONGLONG YL-20 &nbsp;YL-32...<br />\r\n<br />\r\n+ 各种气压零件 E.M.C - MINDMAN...', 1, 28, 1, 1, '2016-12-23 00:00:00', '2019-03-02 11:50:24');
 
 -- --------------------------------------------------------
 
@@ -1693,33 +1692,36 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `name`, `value`, `created_at`, `updated_at`) VALUES
-(1, 'base_url', 'http://nghien.biz', '2016-07-27 14:37:52', '2016-07-27 14:37:52'),
-(2, 'site_title_vi', 'Công ty TNHH TM KT Gia Gia Phú', '2016-07-27 14:37:52', '2018-10-17 08:11:05'),
-(3, 'site_description_vi', 'Gia Gia Phú là công ty hàng đầu Việt Nam chuyên cung cấp dịch vụ thương mại kỹ thuật.', '2016-07-27 14:37:52', '2018-10-17 08:11:05'),
-(4, 'site_keywords_vi', 'Gia Gia Phú', '2016-07-27 14:37:52', '2018-10-17 08:11:05'),
-(5, 'admin_email', 'nghien.biz@gmail.com', '2016-07-27 14:37:52', '2016-07-27 14:37:52'),
+(1, 'base_url', 'http://kaizen.biz', '2016-07-27 14:37:52', '2016-07-27 14:37:52'),
+(2, 'site_title_vi', 'Kaizen Creative VN', '2016-07-27 14:37:52', '2019-03-02 14:24:43'),
+(3, 'site_description_vi', 'Kaizen Creative VN', '2016-07-27 14:37:52', '2019-03-02 14:24:43'),
+(4, 'site_keywords_vi', 'Kaizen Creative VN', '2016-07-27 14:37:52', '2018-10-17 08:11:05'),
+(5, 'admin_email', '', '2016-07-27 14:37:52', '2016-07-27 14:37:52'),
 (22, 'mail_server', 'mail.example.com', '2016-07-27 14:37:52', '2016-07-27 14:37:52'),
 (23, 'mail_login_name', 'login@example.com', '2016-07-27 14:37:52', '2016-07-27 14:37:52'),
 (24, 'mail_password', 'password', '2016-07-27 14:37:52', '2016-07-27 14:37:52'),
-(105, 'site_name_vi', 'Công ty TNHH TM KT Gia Gia Phú', '2016-07-27 14:37:52', '2018-10-17 08:11:05'),
-(113, 'google_analystic', 'UA-88738631-5', '2016-07-27 14:37:52', '2018-10-17 08:11:05'),
+(105, 'site_name_vi', 'Kaizen Creative VN', '2016-07-27 14:37:52', '2019-03-02 14:24:43'),
+(113, 'google_analystic', 'UA-88738631-5', '2016-07-27 14:37:52', '2019-03-02 14:24:43'),
 (114, 'facebook_appid', '282210028789883', '2016-07-27 14:37:52', '2018-10-17 08:11:05'),
 (115, 'google_fanpage', '', '2016-07-27 14:37:52', '2018-10-17 08:11:05'),
-(116, 'facebook_fanpage', 'https://www.facebook.com/www.icho.vn', '2016-07-27 14:37:52', '2018-10-17 08:11:05'),
+(116, 'facebook_fanpage', 'https://www.facebook.com/kaizen', '2016-07-27 14:37:52', '2019-03-02 14:24:43'),
 (117, 'twitter_fanpage', '', '2016-07-27 14:37:52', '2018-10-17 08:11:05'),
-(130, 'logo', '2017/02/02/logo-1486025026.png', '2016-07-27 14:37:52', '2018-10-17 08:11:05'),
+(130, 'logo', '/public/uploads/images/logo-1551511474.png', '2016-07-27 14:37:52', '2019-03-02 14:24:43'),
 (131, 'favicon', '2017/02/02/favicon-1486025021.ico', '2016-07-27 14:37:52', '2018-10-17 08:11:05'),
-(141, 'banner', '2017/02/02/slide2-1486025035.jpg', '2016-07-27 14:37:52', '2018-10-17 08:11:05'),
+(141, 'banner', '2017/02/02/slide2-1486025035.jpg', '2016-07-27 14:37:52', '2019-03-02 14:24:43'),
 (142, 'custom_text_vi', '', '2016-07-27 14:37:52', '2018-10-17 08:11:05'),
-(143, 'email_cc', 'nguyendinhnong@gmail.com', '2016-11-11 00:00:00', '2018-10-17 08:11:05'),
-(144, 'site_title_en', 'Công ty TNHH TM KT Gia Gia Phú', '2017-02-02 00:00:00', '2018-10-17 08:11:05'),
-(145, 'site_description_en', 'Gia Gia Phú là công ty hàng đầu Việt Nam chuyên cung cấp dịch vụ thương mại kỹ thuật.', '2017-02-02 00:00:00', '2018-10-17 08:11:05'),
-(146, 'site_keywords_en', 'Gia Gia Phú', '2017-02-02 00:00:00', '2018-10-17 08:11:05'),
+(143, 'email_cc', '', '2016-11-11 00:00:00', '2018-10-17 08:11:05'),
+(144, 'site_title_en', 'Kaizen Creative VN', '2017-02-02 00:00:00', '2019-03-02 14:24:43'),
+(145, 'site_description_en', 'Kaizen Creative VN', '2017-02-02 00:00:00', '2019-03-02 14:24:43'),
+(146, 'site_keywords_en', 'Kaizen Creative VN', '2017-02-02 00:00:00', '2018-10-17 08:11:05'),
 (147, 'custom_text_en', '', '2017-02-02 00:00:00', '2018-10-17 08:11:05'),
-(148, 'site_name_en', 'Công ty TNHH TM KT Gia Gia Phú', '2017-02-02 00:00:00', '2018-10-17 08:11:05'),
-(999, 'site_title_cn', 'site_title_cn', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(1000, 'site_description_cn', 'site_description_cn', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(1001, 'site_keywords_cn', 'site_keywords_cn', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(148, 'site_name_en', 'Kaizen Creative VN', '2017-02-02 00:00:00', '2019-03-02 14:24:43'),
+(999, 'site_title_cn', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(1000, 'site_description_cn', '', '2019-03-02 00:00:00', '0000-00-00 00:00:00'),
+(1001, 'site_keywords_cn', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(1002, 'email', 'someone@gmail.com', '2019-03-02 00:00:00', '2019-03-02 14:24:43'),
+(1003, 'phone', '(+84) 0123 456 789', '2019-03-02 10:07:33', '2019-03-02 14:24:43'),
+(1004, 'instagram', '', '2019-03-02 10:07:33', '2019-03-02 14:24:43');
 
 -- --------------------------------------------------------
 
@@ -1775,96 +1777,38 @@ CREATE TABLE `text` (
 
 INSERT INTO `text` (`id`, `text_key`, `text_vi`, `text_en`, `text_cn`) VALUES
 (1, 'trang-chu', 'Trang chủ', 'Home', '公司首頁'),
-(2, 'gioi-thieu-trang-chu', 'Là một trong những công ty hàng đầu Việt Nam chuyên cung cấp dịch vụ thương mại kỹ thuật. Công ty TNHH TM KT Gia Gia Phú đã ra đời và hoạt động nhiều năm trong lĩnh vực mua bán và giới thiệu các sản phẩm nhập khẩu chuyên dụng như: ống dầu thuỷ lực, khớp nối nhanh dùng cho ống thuỷ lực, máy bóp ống dầu, các linh kiện dẫn khí... Với quy trình trên chúng tôi luôn đảm bảo chất lượng hoàn hảo nhất và chủ động thời gian giao hàng.', 'As one of the leading companies in Vietnam specializing in providing engineering services business. DV Trading Co. Phu Gia Gia was born and active in the field of trade and the introduction of specialized imported products such as oil and hydraulic hose, quick couplings for hydraulic hose, pipe squeeze machine oil, gas components ...With the above process we always ensure perfect quality and on-time delivery initiative.', '家家富贸易有限公司是专提供各种工程设备。在越南已诞生活跃多年和专进口各类产品如下：液压油管，石油管，扣压机，快速接头，PU管和各种接头。。。\r\n本公司宗旨：以服务为主，确保产品质量，主动配合客户准时送货。'),
 (3, 've-chung-toi', 'Về chúng tôi', 'About us', '关于'),
-(4, 'san-pham-moi-nhat', 'Sản phẩm mới nhất', 'New products', '新产品'),
 (5, 'tin-tuc', 'Tin tức', 'News', '新闻'),
-(6, 'ho-tro-dat-hang', 'Hỗ trợ đặt hàng', 'Order support', '热线电话'),
-(7, 'ho-tro-online', 'Hỗ trợ online', 'Online Support', '手机号码'),
-(8, 'thoat-tai-khoan', 'Thoát tài khoản', 'Logout', NULL),
-(9, 'linh-vuc-hoat-dong', 'Lĩnh vực hoạt động', 'Scope of work', '工作范围'),
-(10, 'gioi-thieu-cong-ty', 'Giới thiệu công ty', 'About our company', '关于公司'),
-(11, 'gioi-thieu', 'Giới thiệu', 'About us', '关于'),
-(12, 'gio-hang', 'Giỏ hàng', 'Cart', NULL),
-(13, 'xem-tat-ca', 'Xem tất cả', 'View All', NULL),
 (14, 'chi-tiet', 'Chi tiết', 'View Detail', NULL),
-(15, 'mua-hang', 'Mua hàng', 'Add to cart', NULL),
-(16, 'danh-muc-san-pham', 'Danh mục sản phẩm ', 'Product Category', NULL),
-(17, 'khoang-gia', 'Khoảng giá', 'Price range', NULL),
-(18, 'san-pham-trong-gio-hang', 'Sản phẩm trong giỏ hàng', 'Products in cart', NULL),
-(19, 'gia-mua', 'Giá mua', 'Price', NULL),
-(20, 'so-luong', 'Số lượng', 'Amount', NULL),
-(21, 'thanh-tien', 'Thành tiền', 'Total', NULL),
-(22, 'xoa', 'Xóa', 'Remove', NULL),
-(23, 'tiep-tuc-mua-sam', 'Tiếp tục mua sắm', 'Continue shopping', NULL),
-(24, 'xoa-toan-bo', 'Xóa toàn bộ', 'Empty cart', NULL),
-(25, 'tong-cong', 'Tổng cộng', 'Total sum', NULL),
-(26, 'dat-hang', 'Đặt hàng', 'Order', NULL),
-(27, 'da-bao-gom-vat', 'Đã bao gồm VAT', 'VAT included', NULL),
-(28, 'khach-hang-moi', 'Khách hàng mới', 'New customer', NULL),
-(29, 'thanh-toan-don-hang-trong-1-buoc-voi', 'Thanh toán đơn hàng trong chỉ một bước với', 'Payment this order in one step with', NULL),
-(30, 'don-hang', 'Đơn hàng', 'Order', NULL),
 (31, 'san-pham', 'Sản phẩm', 'Products', '產品介紹'),
-(32, 'sua', 'Sửa', 'Edit', NULL),
 (33, 'ho-ten', 'Họ tên', 'Full name', NULL),
 (34, 'nhap-ho-ten', 'Nhập họ tên', 'Input full name', NULL),
-(35, 'mat-khau', 'Mật khẩu ', 'Password', NULL),
-(36, 'phi-van-chuyen', 'Phí vận chuyển', 'Delivery Fee', NULL),
-(37, 'tam-tinh', 'Tạm tính', 'Tạm tính', NULL),
-(38, 'da-la-thanh-vien', 'Đã là thành viên', 'For member', NULL),
-(39, 'danh-cho-khach-hang-moi', 'Dành cho khách hàng mới', 'For new customer', NULL),
-(40, 'dia-chi-giao-hang', 'Địa chỉ giao hàng', 'Shipping address', NULL),
 (41, 'dia-chi', 'Địa chỉ', 'Address', NULL),
-(42, 'thanh-toan-va-dat-mua', 'Thanh toán & Đặt mua', 'Order & Payment', NULL),
-(43, 'thanh-toan', 'Thanh toán', 'Payment', NULL),
-(44, 'chon-dia-chi-giao-hang-co-san-ben-duoi', 'Chọn địa chỉ giao hàng có sẵn bên dưới', 'Select shipping address exist below', NULL),
 (45, 'dien-thoai', 'Điện thoại', 'Phone', NULL),
-(46, 'giao-den-dia-chi-nay', 'Giao đến địa chỉ này', 'Ship to this address', NULL),
-(47, 'chon-hinh-thuc-thanh-toan', 'Chọn hình thức thanh toán', 'Please select payment method', NULL),
-(48, 'chuyen-khoan-ngan-hang', 'Chuyển khoản ngân hàng', 'Chuyen khoan ngan hang', NULL),
-(49, 'giao-hang-va-thu-tien-tan-nha', 'Giao hàng và thu tiền tận nhà', 'COD', NULL),
-(50, 'dat-mua', 'Đặt mua', 'Payment', NULL),
-(51, 'tai-khoan', 'Tài khoản', 'Account Info', NULL),
-(52, 'cap-nhat-thong-tin', 'Cập nhật thông tin', 'Update Infomation', NULL),
-(53, 'tinh-thanh-pho', 'Tỉnh/Thành Phố', 'City', NULL),
-(54, 'quan-huyen', 'Quận/Huyện', 'District', NULL),
-(55, 'chon', 'Chọn', 'Select', NULL),
-(56, 'phuong-xa', 'Phường/Xã', 'Ward', NULL),
-(57, 'nha-rieng-chung-cu', 'Nhà riêng/Chung cư', 'House/Apartment', NULL),
-(58, 'co-quan-cong-ty', 'Cơ quan/Công ty', ' Agency/Company', NULL),
-(59, 'cap-nhat-thong-tin-thanh-cong', 'Cập nhật thông tin thành công', 'Update info success', NULL),
-(60, 'cap-nhat', 'Cập nhật', 'Update', NULL),
-(61, '產品介紹', 'Sản phẩm', 'Products', '產品介紹'),
-(63, 'nhap-so-dien-thoai', 'Nhập số điện thoại', 'Enter phone number', NULL),
-(64, '52-tran-hung-dao', 'Ví dụ: 52 đường Trần Hưng Đạo', 'Ex: 52 Tran Hung Dao Street', NULL),
-(65, 'vui-long-chon', 'Vui lòng chọn', 'Please select', NULL),
-(66, 'vui-long-nhap', 'Vui lòng nhập', 'Please enter', NULL),
-(67, 'ma-don-hang', 'Mã ĐH', 'Code', NULL),
-(68, 'ngay-mua', 'Ngày mua', 'Order Date', NULL),
-(69, 'tong-tien', 'Tổng tiền', 'Total price', NULL),
-(70, 'trang-thai-don-hang', 'Trạng thái đơn hàng', 'Order status', NULL),
-(71, 'trang-thai', 'Trạng thái', 'Status', NULL),
-(72, 'ten-san-pham', 'Tên sản phẩm', 'Product Name', NULL),
-(73, 'ngay-dat-hang', 'Ngày đặt hàng', 'Date order', NULL),
-(74, 'phuong-thuc-van-chuyen', 'Phương thức vận chuyển', 'Delivery Method', NULL),
-(75, 'quay-ve', 'Quay về', 'Back to', NULL),
-(76, 'huy', 'Hủy', 'Cancel', NULL),
-(77, 'da-huy-don-hang', 'Đã hủy đơn hàng', 'Cancel success', NULL),
-(78, 'chac-chan-huy-don-hang', 'Quý khách chắc chắn muốn hủy đơn hàng', 'Are you sure you want to cancel this order', NULL),
-(79, 'gia', 'Giá', 'Price', NULL),
-(80, 'hinh-thuc-thanh-toan', 'Hình thức thanh toán', 'Payment Method', NULL),
 (81, 'lien-he', 'Liên hệ', 'Contact us', '联系我们'),
-(82, 'tieu-de', 'Tiêu đề', 'Title', NULL),
-(83, 'gui', 'Gửi', 'Send', NULL),
-(84, 'ma-sp', 'Mã SP', 'Product Code', NULL),
-(85, 'chi-tiet-san-pham', 'Chi tiết sản phẩm', 'Product Detail', NULL),
-(86, 'danh-gia', 'Đánh giá', 'Comments', NULL),
-(87, 'noi-dung-dang-cap-nhat', 'Nội dung đang được cập nhật...', 'Updating...', NULL),
-(88, 'san-pham-lien-quan', 'Sản phẩm liên quan', 'Related Products', NULL),
-(89, 'san-pham-khuyen-mai', 'Sản phẩm khuyến mãi', 'Upsell Products', NULL),
-(90, 're-chuot-phong-to', 'Rê chuột để phóng to', 'Mouse hover to zoom', NULL),
-(91, 'dang-ky', 'Đăng ký', 'Register', NULL),
-(92, 'quoc-gia', 'Quốc gia', 'Country', NULL);
+(82, 'ngon-ngu', 'Ngôn ngữ', 'Language', NULL),
+(83, 'nhap-tu-khoa', 'Nhập từ khóa cần tìm!', 'Please input keyword!', NULL),
+(84, 'tai-sao-chon', 'Tại sao chọn chúng tôi?', 'Why choose us', NULL),
+(85, 'tucson', 'We are one of the leading auto repair shops serving customers in Tucson.', 'We are one of the leading auto repair shops serving customers in Tucson.', NULL),
+(86, 'pro', 'PROFESSIONAL STANDARDS', 'PROFESSIONAL STANDARDS', NULL),
+(87, 'best', 'BEST MATERIALS', 'BEST MATERIALS', NULL),
+(88, 'value', 'VALUE US', 'VALUE US', NULL),
+(89, 'found-it', 'If you want the quality you would expect from the dealership, but with a more personal and friendly atmosphere, you have found it.', 'If you want the quality you would expect from the dealership, but with a more personal and friendly atmosphere, you have found it.', NULL),
+(90, 'vehicle', 'We have invested in all the latest specialist tools and diagnostic software that is specifically tailored for the software in your vehicle.', 'We have invested in all the latest specialist tools and diagnostic software that is specifically tailored for the software in your vehicle.', NULL),
+(91, 'problem', 'Our auto repair shop is capable of servicing a variety of models. We only do the work that is needed to fix your problem.', 'Our auto repair shop is capable of servicing a variety of models. We only do the work that is needed to fix your problem.', NULL),
+(92, 'partner', 'OUR PARTNER', 'OUR PARTNER', NULL),
+(93, 'mechanics', 'All mechanic services are performed by highly qualified mechanics.', 'All mechanic services are performed by highly qualified mechanics.', NULL),
+(94, 'lorem', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi impedit enim sit laudantium dignissimos nisi assumenda nulla accusamus libero? Beatae qui quibusdam pariatur doloribus harum amet odit officia illum voluptatibus!', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi impedit enim sit laudantium dignissimos nisi assumenda nulla accusamus libero? Beatae qui quibusdam pariatur doloribus harum amet odit officia illum voluptatibus!', NULL),
+(95, 'ket-noi', 'Kết nối', 'Connect us', NULL),
+(96, 'dia-chi-cty', '29/6A Tran Thai Tong, Ward.15, Tan Binh Dist, HCMC, Vietnam', '29/6A Tran Thai Tong, Ward.15, Tan Binh Dist, HCMC, Vietnam', NULL),
+(97, 'touch', 'Get In Touch', 'Get In Touch', NULL),
+(98, 'help', 'Let us know if you want to book the room or if you need any help', 'Let us know if you want to book the room or if you need any help', NULL),
+(99, 'fill', 'Vui lòng nhập đầy đủ thông tin.', 'Vui lòng nhập đầy đủ thông tin.', NULL),
+(100, 'cemail', 'Liên hệ qua Email', 'Contact us by Email', NULL),
+(101, 'cphone', 'Liên hệ điện thoại', 'Contact us by Phone', NULL),
+(102, 'gui', 'Gửi', 'Send', NULL),
+(103, 'name', 'Họ tên', 'Full name', NULL),
+(104, 'message', 'Nội dung', 'Message', NULL);
 
 -- --------------------------------------------------------
 
@@ -1892,7 +1836,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `role`, `status`, `changed_password`, `remember_token`, `created_user`, `updated_user`, `created_at`, `updated_at`) VALUES
-(1, 'Super Admin', 'admin@giagiaphu.com.vn', '$2y$10$iDdOWGaKaATi2Cv5jLE1DOQm4WrYmB4yb7veqto0lH6OjqFxoUDBS', 3, 1, 0, 'XcHYCxCmhsMR9nwVLDO9DnsqMQI8jzxRAzDB2YOlMc6aOUVX9wJaHGJoip1Z', 1, 1, '2016-08-27 05:26:18', '2018-10-05 16:16:53');
+(1, 'Super Admin', 'admin@shoptayninh.vn', '$2y$10$iDdOWGaKaATi2Cv5jLE1DOQm4WrYmB4yb7veqto0lH6OjqFxoUDBS', 3, 1, 0, 'XcHYCxCmhsMR9nwVLDO9DnsqMQI8jzxRAzDB2YOlMc6aOUVX9wJaHGJoip1Z', 1, 1, '2016-08-27 05:26:18', '2018-10-05 16:16:53');
 
 --
 -- Indexes for dumped tables
@@ -2051,7 +1995,7 @@ ALTER TABLE `articles_cate`
 -- AUTO_INCREMENT for table `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `blocks`
@@ -2087,7 +2031,7 @@ ALTER TABLE `meta_data`
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -2099,7 +2043,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1002;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1005;
+
+--
+-- AUTO_INCREMENT for table `text`
+--
+ALTER TABLE `text`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
