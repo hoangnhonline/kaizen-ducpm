@@ -4,7 +4,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Banner của <span style="color:red">{{ $detail->name }}</span>
+    Banner</span>
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -38,6 +38,7 @@
             <tr>
               <th style="width: 1%">#</th>
               <th style="width: 1%;white-space:nowrap">Thứ tự</th>
+              <th style="">Title / Subtitle</th>
               <th style="width:150px">Banner</th>
               <th>Liên kết</th>
   
@@ -52,6 +53,10 @@
                 <td><span class="order">{{ $i }}</span></td>
                 <td style="vertical-align:middle;text-align:center">
                   <img src="{{ URL::asset('public/admin/dist/img/move.png')}}" class="move img-thumbnail" alt="Cập nhật thứ tự"/>
+                </td>
+                <td>
+                  {{ $item->title_vi }}<br>
+                  {{ $item->subtitle_vi }}
                 </td>
                 <td>                  
                   <img class="img-thumbnail banner" width="200" src="{{ $item->image_url ? Helper::showImage($item->image_url) : URL::asset('public/admin/dist/img/no-image.jpg') }}" />

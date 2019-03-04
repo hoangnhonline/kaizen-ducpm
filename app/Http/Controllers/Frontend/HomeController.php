@@ -50,6 +50,7 @@ class HomeController extends Controller
         $slug_key = "slug_".$lang;
         $name_key = "name_".$lang;
         $title_key = "title_".$lang;
+        $subtitle_key = "subtitle_".$lang;
         $content_key = "content_".$lang;
         $productList = Product::where('is_hot', 1)->where('status', 1)->orderBy('id', 'desc')->limit(6)->get();   
         $bannerList = Banner::where('object_type', 3)->get();
@@ -71,7 +72,9 @@ class HomeController extends Controller
                 'bannerArr',
                 'about',
                 'commentList',
-                'partnerList'));
+                'partnerList',
+                'subtitle_key'
+            ));
     }
 
     

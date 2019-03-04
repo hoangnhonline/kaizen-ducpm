@@ -16,16 +16,16 @@
             @if($banner->ads_url !='')
             </a>
             @endif
-            <!-- <div class="figcaption">
+            <div class="figcaption">
                 <div class="box-table">
                     <div class="box-td">
                         <div class="box-des">
-                            <h2 class="text-large">MAKE YOUR CAR LAST LONGER</h2>
-                            <h3 class="text-medium">Free oil change, April 15. Only if you have a "5" on your license plate.</h3>
+                            <h2 class="text-large">{!! $banner->$title_key !!}</h2>
+                            <h3 class="text-medium">{!! $banner->$subtitle_key !!}</h3>
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </li>
         @endforeach
     </ul>

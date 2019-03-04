@@ -39,7 +39,23 @@
                           @endforeach
                       </ul>
                   </div>
-              @endif              
+              @endif      
+              <div class="form-group">
+                  <label>Title tiếng Việt</label>
+                  <input type="text" name="title_vi" id="title_vi" value="{{ old('title_vi', $detail->title_vi) }}" class="form-control">
+                </div> 
+                <div class="form-group">
+                  <label>Subtitle tiếng Việt</label>
+                  <input type="text" name="subtitle_vi" id="subtitle_vi" value="{{ old('subtitle_vi', $detail->subtitle_vi) }}" class="form-control">
+                </div> 
+                <div class="form-group">
+                  <label>Title tiếng Anh</label>
+                  <input type="text" name="title_en" id="title_en" value="{{ old('title_en', $detail->title_en) }}" class="form-control">
+                </div> 
+                <div class="form-group">
+                  <label>Subtitle tiếng Anh</label>
+                  <input type="text" name="subtitle_en" id="subtitle_en" value="{{ old('subtitle_en', $detail->subtitle_en) }}" class="form-control">
+                </div>          
                 <div class="form-group" style="margin-top:10px;margin-bottom:10px">  
                   <label class="col-md-3 row">Banner</label>    
                   <div class="col-md-9">
